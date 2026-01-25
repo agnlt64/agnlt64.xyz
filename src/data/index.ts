@@ -67,6 +67,24 @@ export const education: Education = {
   icon: "GraduationCap"
 }
 
+export type Internship = {
+  title: string;
+  company: string;
+  period: string;
+  description: string;
+  icon: string;
+}
+
+export const internships: Internship[] = [
+  {
+    title: "Introductory Internship",
+    company: "Microsoft France",
+    period: "June 2022",
+    description: "A week-long internship providing insights into the tech industry, Microsoft culture, and hands-on experience with software development practices. During the week, I participated in a project group and presented our innovation to a panel of various people.",
+    icon: "Microsoft"
+  }
+]
+
 export type SkillCategory = {
   title: string;
   icon: string;
@@ -211,7 +229,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: "Discord",
-    icon: "MessageCircle",
+    icon: "Discord",
     href: "https://discord.com/users/775767274774462484"
   },
   {

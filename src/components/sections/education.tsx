@@ -1,7 +1,7 @@
 "use client"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { education } from "@/data"
+import { education, internships } from "@/data"
 import { Icon } from "@/components/ui/icon"
 import { Calendar, MapPin } from "lucide-react"
 
@@ -100,6 +100,71 @@ export function EducationSection() {
               </div>
             </CardContent>
           </Card>
+
+          {/* Internships Section */}
+          {internships.length > 0 && (
+            <div className="mt-12">
+              <h3 className="text-2xl font-bold mb-6 ml-0 md:ml-16">Internships</h3>
+              
+              <div className="space-y-6">
+                {internships.map((internship, index) => (
+                  <Card
+                    key={index}
+                    className="
+                      group relative overflow-hidden
+                      glass
+                      hover-glow
+                      cursor-pointer
+                      border border-white/10 hover:border-pink-500/40
+                      transition-all duration-300
+                      animate-fade-in-up opacity-0
+                      md:ml-16
+                    "
+                    style={{ animationDelay: `${(index + 1) * 100}ms` }}
+                  >
+                    {/* Gradient accent */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-pink-500/0 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+
+                    {/* Timeline dot */}
+                    <div className="absolute -left-[4.5rem] top-8 w-4 h-4 rounded-full bg-pink-500/60 border-2 border-pink-500/40 hidden md:block" />
+
+                    <CardHeader className="relative z-10">
+                      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                        <div className="flex items-start gap-4">
+                          {/* Icon container */}
+                          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500/20 to-pink-600/10 flex items-center justify-center border border-pink-500/20 group-hover:glow-pink transition-all duration-300 shrink-0">
+                            <Icon name={internship.icon} className="w-8 h-8 text-primary" />
+                          </div>
+
+                          <div>
+                            <CardTitle className="text-xl mb-2">
+                              {internship.title}
+                            </CardTitle>
+                            <CardDescription className="text-base flex flex-col gap-1">
+                              <span className="flex items-center gap-2">
+                                <MapPin className="w-4 h-4 text-pink-500" />
+                                {internship.company}
+                              </span>
+                              <span className="flex items-center gap-2">
+                                <Calendar className="w-4 h-4 text-pink-500" />
+                                {internship.period}
+                              </span>
+                            </CardDescription>
+                          </div>
+                        </div>
+                      </div>
+                    </CardHeader>
+
+                    <CardContent className="relative z-10">
+                      <p className="text-muted-foreground leading-relaxed">
+                        {internship.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
