@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "skibidiuwu.org",
+  title: "agnlt64.xyz",
   description: "absolute coding",
 };
 

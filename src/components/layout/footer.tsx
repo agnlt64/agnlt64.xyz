@@ -16,9 +16,8 @@ export function Footer() {
           {/* Logo/Brand */}
           <div className="text-center md:text-left">
             <span className="text-xl font-bold">
-              <span className="text-white">skibidi</span>
-              <span className="text-pink-500 text-glow-pink">uwu</span>
-              <span className="text-white">.org</span>
+              <span className="text-white">agnlt64</span>
+              <span className="text-pink-500">.xyz</span>
             </span>
           </div>
 

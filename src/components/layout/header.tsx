@@ -18,17 +18,17 @@ export function Header() {
   return (
     <header
       className={`
-        fixed top-0 left-0 right-0 p-6 z-50
+        fixed top-0 left-0 right-0 m-2 p-6 z-50
         transition-all duration-500
+        rounded-2xl
         ${scrolled ? 'glass-strong py-4' : 'bg-transparent'}
       `}
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Link href="/" className="block group">
-          <h1 className="text-2xl font-bold transition-all duration-300 group-hover:scale-105">
-            <span className="text-white transition-colors">skibidi</span>
-            <span className="text-pink-500 text-glow-pink transition-all duration-300 group-hover:text-glow-pink-strong">uwu</span>
-            <span className="text-white transition-colors">.org</span>
+          <h1 className="text-2xl font-bold">
+            <span className="text-white">agnlt64</span>
+            <span className="text-pink-500">.xyz</span>
           </h1>
         </Link>
 

@@ -44,10 +44,10 @@ export function SocialsSection() {
           <p className="text-sm text-muted-foreground">
             Prefer email? Reach me at{" "}
             <a
-              href="mailto:contact@skibidiuwu.org"
+              href="mailto:contact@agnlt64.xyz"
               className="text-primary hover:text-pink-400 transition-colors underline underline-offset-4"
             >
-              contact@skibidiuwu.org
+              contact@agnlt64.xyz
             </a>
           </p>
         </div>

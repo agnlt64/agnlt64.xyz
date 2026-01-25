@@ -9,10 +9,10 @@ export type Config = {
 
 export const siteConfig: Config = {
   name: "agnlt64",
-  tagline: "Software Engineer • Chess Player",
-  description: "Personal website of agnlt64 - a passionate software engineer and chess player.",
-  url: "https://skibidiuwu.org",
-  footer: "© 2025 skibidiuwu.org • Built with passion and lots of guinness"
+  tagline: "Student • Software Engineer • Tech Enthusiast",
+  description: "Personal website of agnlt64 - a passionate software engineer and tech enthusiast.",
+  url: "https://agnlt64.xyz",
+  footer: "© 2025 agnlt64.xyz • Built with passion and TypeScript"
 }
 
 export type NavItem = {
@@ -23,7 +23,6 @@ export type NavItem = {
 
 export const navigation: NavItem[] = [
   { name: "Programming", href: "#programming", icon: "Code" },
-  { name: "Chess", href: "#chess", icon: "Crown" },
   { name: "Electronics", href: "#electronics", icon: "Zap" }
 ]
 
@@ -42,13 +41,6 @@ export const aboutCards: AboutCard[] = [
     description: "Passionate about clean code, elegant solutions, and building things that matter.",
     content: "I love diving deep into complex problems and crafting efficient, maintainable solutions. Always learning new technologies and best practices.",
     icon: "Code"
-  },
-  {
-    id: "chess",
-    title: "Chess",
-    description: "Strategic thinking and pattern recognition fuel my love for the royal game.",
-    content: "Chess teaches patience, planning, and the beauty of tactical combinations. It's where logic meets creativity on 64 squares.",
-    icon: "Crown"
   },
   {
     id: "electronics",
@@ -100,7 +92,7 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Databases",
     icon: "BookOpen",
-    skills: ["SQLite", "MariaDB", "MySQL"]
+    skills: ["SQLite", "MariaDB", "MySQL", "PostgreSQL", "Prisma"]
   },
   {
     title: "Tools & Platforms",
@@ -115,12 +107,12 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Hardware",
     icon: "Cpu",
-    skills: ["Raspberry Pi 4", "Raspberry Pi Pico"]
+    skills: ["Raspberry Pi 4", "Raspberry Pi Pico", "Arduino"]
   },
   {
     title: "Hosting",
     icon: "Server",
-    skills: ["Vercel", "Netlify", "VPS Management", "Cloud Deployment"]
+    skills: ["Vercel", "VPS Management", "Netlify", "Cloud Deployment", "Docker"]
   }
 ]
 
@@ -163,6 +155,13 @@ export const projects: Project[] = [
     href: "https://github.com/agnlt64/meta-react",
   },
   {
+    title: "Portfolio Website",
+    description: "My personal portfolio website.",
+    content: "A sleek, modern portfolio website built with Next.js and Tailwind CSS. Showcases my projects, skills, and background in a clean, responsive design.",
+    technologies: ["Next.js", "Tailwind CSS", "shadcn"],
+    href: "#"
+  },
+  {
     title: "Python Search Engine",
     description: "A custom search engine that indexes a Python codebase.",
     content: "Parses your codebase using Python's native AST module and indexes all of the functions. The results are displayed in a user-friendly web export type.",
@@ -170,19 +169,26 @@ export const projects: Project[] = [
     href: "https://github.com/agnlt64/PPI"
   },
   {
+    title: "Next.js clone",
+    description: "Next.js website clone in vanilla web technologies.",
+    content: "A very loyal copy of the Next.js official website. Not the whole website, and contains custom pages.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    href: "https://github.com/agnlt64/nextjs-clone",
+  },
+  {
+    title: "Java Tool",
+    description: "A command-line tool in Go to manage Java projects.",
+    content: "A CLI tool to simplify the management of Java projects. Features include project scaffolding and simplifies building. No IDE required.",
+    technologies: ["Go"],
+    href: "https://github.com/agnlt64/java-tool"
+  },
+  {
     title: "Journal",
     description: "A personal journal application.",
     content: "An application to keep track of daily thoughts, and reflections. Features a clean export type and secure data storage. There is support for images and additional security features, such as per-entry password protection.",
-    technologies: ["Flask", "SQLite", "JavaScript"],
+    technologies: ["Next.js", "Prisma", "TypeScript", "Tailwind CSS"],
     href: "#",
     private: true
-  },
-  {
-    title: "Portfolio Website",
-    description: "My personal portfolio website.",
-    content: "A sleek, modern portfolio website built with Next.js and Tailwind CSS. Showcases my projects, skills, and background in a clean, responsive design.",
-    technologies: ["Next.js", "Tailwind CSS", "shadcn"],
-    href: "https://skibidiuwu.org"
   },
 ]
 
