@@ -2,17 +2,11 @@
 export type Config = {
     name: string;
     tagline: string;
-    description: string;
-    url: string;
-    footer: string;
 }
 
 export const siteConfig: Config = {
   name: "agnlt64",
   tagline: "Student • Software Engineer • Tech Enthusiast",
-  description: "Personal website of agnlt64 - a passionate software engineer and tech enthusiast.",
-  url: "https://agnlt64.xyz",
-  footer: "© 2025 agnlt64.xyz • Built with passion and TypeScript"
 }
 
 export type NavItem = {

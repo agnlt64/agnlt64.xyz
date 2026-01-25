@@ -7,7 +7,7 @@ export function SocialsSection() {
   return (
     <section className="relative px-6 py-24" id="socials">
       {/* Section divider */}
-      <div className="section-divider max-w-4xl mx-auto mb-16" />
+      <div className="section-divider w-full mx-auto mb-16" />
 
       <div className="mx-auto max-w-3xl text-center relative z-10">
         {/* Section header */}
