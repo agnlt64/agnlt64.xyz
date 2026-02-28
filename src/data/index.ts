@@ -171,8 +171,16 @@ export const projects: Project[] = [
     title: "Meta React",
     description: "A programming language that compiles to Next.js code.",
     content: "Meta React is a new programming language designed to simplify the development of Next.js applications. It is focused on Static Site Generation (SSG) and offers a more intuitive syntax.",
-    technologies: ["TypeScript", "Next.js"],
+    technologies: ["TypeScript", "Next.js", "Go"],
     href: "https://github.com/agnlt64/meta-react",
+    featured: true,
+  },
+  {
+    title: "Timecode",
+    description: "A VSCode extension to keep track of how much time you spend coding.",
+    content: "Includes a dashboard to visualize stats and API to store data in a SQLite database. Fully open-source, free and self-hostable.",
+    technologies: ["TypeScript", "Next.js", "Prisma", "SQLite", "Tailwind CSS", "VSCode extension"],
+    href: "https://github.com/agnlt64/timecode",
     featured: true,
   },
   {
@@ -210,7 +218,6 @@ export const projects: Project[] = [
     technologies: ["Next.js", "Prisma", "TypeScript", "Tailwind CSS"],
     href: "#",
     private: true,
-    featured: true,
   },
 ]
 
