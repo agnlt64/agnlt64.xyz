@@ -94,7 +94,7 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Frontend",
     icon: "Monitor",
-    skills: ["React", "Next.js", "Tailwind", "shadcn"]
+    skills: ["React", "Next.js", "Tailwind", "shadcn", "Vite"]
   },
   {
     title: "Backend",
@@ -107,24 +107,29 @@ export const skillCategories: SkillCategory[] = [
     skills: ["SQLite", "MariaDB", "MySQL", "PostgreSQL", "Prisma"]
   },
   {
-    title: "Tools & Platforms",
+    title: "Tools",
     icon: "Wrench",
-    skills: ["Git", "GitHub", "VS Code", "Visual Studio", "Figma", "GitHub Copilot"]
+    skills: ["Git", "GitHub", "VS Code", "Visual Studio", "Figma", "Neovim", "tmux"]
   },
   {
     title: "Operating Systems",
     icon: "Monitor",
-    skills: ["Windows", "macOS", "Arch Linux", "Fedora", "Mint", "Ubuntu"]
+    skills: ["Windows", "macOS", "Mint",  "Arch Linux", "Fedora", "Ubuntu"]
   },
   {
     title: "Hardware",
     icon: "Cpu",
-    skills: ["Raspberry Pi 4", "Raspberry Pi Pico", "Arduino"]
+    skills: ["Raspberry Pi 4", "Arduino", "Raspberry Pi Pico"]
   },
   {
     title: "Hosting",
     icon: "Server",
     skills: ["Vercel", "VPS Management", "Netlify", "Cloud Deployment", "Docker"]
+  },
+  {
+    title: "Agentic Coding",
+    icon: "Bot",
+    skills: ["OpenCode", "Claude Code", "Gemini CLI", "Github Copilot"]
   }
 ]
 

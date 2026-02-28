@@ -8,7 +8,8 @@ import {
   Wrench,
   Cpu,
   GraduationCap,
-  LucideIcon
+  LucideIcon,
+  Bot
 } from "lucide-react"
 import {
   siYoutube,
@@ -47,6 +48,7 @@ export const iconMap: Record<string, IconComponent> = {
   Server,
   Wrench,
   Cpu,
+  Bot,
   GraduationCap,
   Youtube: siYoutube,
   Instagram: siInstagram,
