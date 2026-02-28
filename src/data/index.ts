@@ -57,12 +57,11 @@ export const education: Education = {
   degree: "Bachelor in Computer Science",
   institution: "IUT informatique d'Amiens",
   graduation: "Expected Graduation 2027",
-  description: "Focusing on software engineering, algorithms, and system design. Currently maintaining a strong GPA while working on various personal projects and contributing to open source.",
+  description: "Focusing on software engineering, algorithms, and system design. Also working on various personal projects and contributing to open source.",
   icon: "GraduationCap"
 }
 
 export type Internship = {
-  title: string;
   company: string;
   period: string;
   description: string;
@@ -71,9 +70,14 @@ export type Internship = {
 
 export const internships: Internship[] = [
   {
-    title: "Introductory Internship",
-    company: "Microsoft France",
-    period: "June 2022",
+    company: "Qwerio - Strasbourg, France",
+    period: "19/01/2026 - 13/03/2026",
+    description: "A two-month long internship, during which I discovered the Microsoft ecosystem for entreprises. I created apps with PowerApps, PowerAutomate and Dataverse. I set up a Copilot chatbot for a client using SPFx and Bot Framework. Finally, I developped an application using AI and agentic coding for a client. I've tested multiple models to find the most successful ones in the Microsoft ecosystem.",
+    icon: "Qwerio"
+  },
+  {
+    company: "Microsoft - Issy-les-Moulineaux, France",
+    period: "06/2022",
     description: "A week-long internship providing insights into the tech industry, Microsoft culture, and hands-on experience with software development practices. During the week, I participated in a project group and presented our innovation to a panel of various people.",
     icon: "Microsoft"
   }

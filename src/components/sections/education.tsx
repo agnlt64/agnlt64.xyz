@@ -138,13 +138,12 @@ export function EducationSection() {
 
                           <div>
                             <CardTitle className="text-xl mb-2">
-                              {internship.title}
-                            </CardTitle>
-                            <CardDescription className="text-base flex flex-col gap-1">
                               <span className="flex items-center gap-2">
                                 <MapPin className="w-4 h-4 text-pink-500" />
                                 {internship.company}
                               </span>
+                            </CardTitle>
+                            <CardDescription className="text-base flex flex-col gap-1">
                               <span className="flex items-center gap-2">
                                 <Calendar className="w-4 h-4 text-pink-500" />
                                 {internship.period}
