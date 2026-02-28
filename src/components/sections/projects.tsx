@@ -1,9 +1,13 @@
 "use client"
 
+import Link from "next/link"
 import { projects } from "@/data"
 import { ProjectCard } from "@/components/ui/project-card"
+import { ArrowRight } from "lucide-react"
 
 export function ProjectsSection() {
+  const featured = projects.filter(p => p.featured)
+
   return (
     <section className="relative px-6 py-24" id="projects">
       {/* Background decoration */}
@@ -24,7 +28,7 @@ export function ProjectsSection() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((project, index) => (
+          {featured.map((project, index) => (
             <div
               key={project.title}
               className={`animate-fade-in-up opacity-0 stagger-${index + 1}`}
@@ -39,6 +43,17 @@ export function ProjectsSection() {
               />
             </div>
           ))}
+        </div>
+
+        {/* View all CTA */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full glass border border-pink-500/30 hover:border-pink-500/60 hover:glow-pink transition-all duration-300 group"
+          >
+            View all {projects.length} projects
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+          </Link>
         </div>
       </div>
     </section>

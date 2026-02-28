@@ -135,6 +135,7 @@ export type Project = {
   technologies: string[];
   href: string;
   private?: boolean;
+  featured?: boolean;
 }
 
 export const projects: Project[] = [
@@ -144,13 +145,15 @@ export const projects: Project[] = [
     content: "A group project for my university. It allows students to find carpooling partners for their university classes. It is currently in development.",
     technologies: ["Python", "Flask", "SQLite", "HTML", "Tailwind", "JavaScript"],
     href: "https://github.com/agnlt64/go-upjv",
+    featured: true,
   },
   {
     title: "GoGPT",
     description: "Terminal-based ChatGPT client.",
     content: "A terminal-based client for interacting with ChatGPT, designed for quick and efficient conversations. The TUI is made using various Go libraries to ensure a smooth user experience.",
     technologies: ["Go", "OpenAI's API"],
-    href: "https://github.com/agnlt64/go-gpt"
+    href: "https://github.com/agnlt64/go-gpt",
+    featured: true,
   },
   {
     title: "C everyday",
@@ -165,6 +168,7 @@ export const projects: Project[] = [
     content: "Meta React is a new programming language designed to simplify the development of Next.js applications. It is focused on Static Site Generation (SSG) and offers a more intuitive syntax.",
     technologies: ["TypeScript", "Next.js"],
     href: "https://github.com/agnlt64/meta-react",
+    featured: true,
   },
   {
     title: "Portfolio Website",
@@ -200,7 +204,8 @@ export const projects: Project[] = [
     content: "An application to keep track of daily thoughts, and reflections. Features a clean export type and secure data storage. There is support for images and additional security features, such as per-entry password protection.",
     technologies: ["Next.js", "Prisma", "TypeScript", "Tailwind CSS"],
     href: "#",
-    private: true
+    private: true,
+    featured: true,
   },
 ]
 
