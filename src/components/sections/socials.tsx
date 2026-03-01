@@ -1,9 +1,23 @@
 "use client"
 
+import { useRef, useState } from "react"
 import { socialLinks } from "@/data"
 import { SocialButton } from "@/components/ui/social-button"
 
 export function SocialsSection() {
+  const [isHovering, setIsHovering] = useState(false)
+  const gridRef = useRef<HTMLDivElement>(null)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const cards = gridRef.current?.querySelectorAll<HTMLElement>(".social-button")
+    if (!cards) return
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect()
+      card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`)
+      card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`)
+    })
+  }
+
   return (
     <section className="relative px-6 py-24" id="socials">
       {/* Section divider */}
@@ -24,7 +38,13 @@ export function SocialsSection() {
         </div>
 
         {/* Social buttons grid */}
-        <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
+        <div
+          ref={gridRef}
+          className="grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+        >
           {socialLinks.map((social, index) => (
             <div
               key={social.name}
@@ -34,22 +54,10 @@ export function SocialsSection() {
                 name={social.name}
                 icon={social.icon}
                 href={social.href}
+                isHovering={isHovering}
               />
             </div>
           ))}
-        </div>
-
-        {/* Call to action */}
-        <div className="mt-12 pt-8 border-t border-white/5">
-          <p className="text-sm text-muted-foreground">
-            Prefer email? Reach me at{" "}
-            <a
-              href="mailto:contact@agnlt64.xyz"
-              className="text-primary hover:text-pink-400 transition-colors underline underline-offset-4"
-            >
-              contact@agnlt64.xyz
-            </a>
-          </p>
         </div>
       </div>
     </section>

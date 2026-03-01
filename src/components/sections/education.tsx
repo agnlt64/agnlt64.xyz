@@ -1,13 +1,33 @@
 "use client"
 
+import { useRef, useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { education, internships } from "@/data"
 import { Icon } from "@/components/ui/icon"
 import { Calendar, MapPin } from "lucide-react"
 
 export function EducationSection() {
+  const [isHovering, setIsHovering] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    const cards = sectionRef.current?.querySelectorAll<HTMLElement>(".education-card")
+    if (!cards) return
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect()
+      card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`)
+      card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`)
+    })
+  }
+
   return (
-    <section className="relative px-6 py-24">
+    <section
+      ref={sectionRef}
+      className="relative px-6 py-24"
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
       {/* Section divider */}
       <div className="section-divider w-full mx-auto mb-16" />
 
@@ -29,7 +49,7 @@ export function EducationSection() {
 
           <Card
             className="
-              group relative overflow-hidden
+              education-card group relative overflow-hidden
               glass
               hover-glow
               cursor-pointer
@@ -39,8 +59,11 @@ export function EducationSection() {
               md:ml-16
             "
           >
-            {/* Gradient accent */}
-            <div className="absolute inset-0 bg-gradient-to-br from-pink-500/0 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+            {/* Cursor spotlight */}
+            <div
+              className={`absolute inset-0 pointer-events-none transition-opacity duration-500 ${isHovering ? "opacity-100" : "opacity-0"}`}
+              style={{ background: "radial-gradient(circle 260px at var(--mouse-x, -9999px) var(--mouse-y, -9999px), rgba(236, 72, 153, 0.15), transparent 100%)" }}
+            />
 
             {/* Timeline dot */}
             <div className="absolute -left-[4.5rem] top-8 w-4 h-4 rounded-full bg-pink-500 glow-pink-strong hidden md:block" />
@@ -111,7 +134,7 @@ export function EducationSection() {
                   <Card
                     key={index}
                     className="
-                      group relative overflow-hidden
+                      education-card group relative overflow-hidden
                       glass
                       hover-glow
                       cursor-pointer
@@ -122,8 +145,11 @@ export function EducationSection() {
                     "
                     style={{ animationDelay: `${(index + 1) * 100}ms` }}
                   >
-                    {/* Gradient accent */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-pink-500/0 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                    {/* Cursor spotlight */}
+                    <div
+                      className={`absolute inset-0 pointer-events-none transition-opacity duration-500 ${isHovering ? "opacity-100" : "opacity-0"}`}
+                      style={{ background: "radial-gradient(circle 260px at var(--mouse-x, -9999px) var(--mouse-y, -9999px), rgba(236, 72, 153, 0.15), transparent 100%)" }}
+                    />
 
                     {/* Timeline dot */}
                     <div className="absolute -left-[4.5rem] top-8 w-4 h-4 rounded-full bg-pink-500/60 border-2 border-pink-500/40 hidden md:block" />

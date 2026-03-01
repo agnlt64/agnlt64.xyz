@@ -4,12 +4,16 @@ import Link from "next/link"
 import { Icon } from "@/components/ui/icon"
 import { SocialLink } from "@/data"
 
-export function SocialButton({ name, icon, href }: SocialLink) {
+interface SocialButtonProps extends SocialLink {
+  isHovering?: boolean
+}
+
+export function SocialButton({ name, icon, href, isHovering = false }: SocialButtonProps) {
   return (
     <Link href={href} target="_blank" className="block">
       <div
         className="
-          group relative overflow-hidden
+          social-button group relative overflow-hidden
           flex flex-col items-center justify-center gap-2
           px-4 py-5 rounded-xl
           glass border border-white/10
@@ -18,8 +22,11 @@ export function SocialButton({ name, icon, href }: SocialLink) {
           hover:translate-y-[-5px]
         "
       >
-        {/* Hover gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-500/0 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        {/* Cursor spotlight */}
+        <div
+          className={`absolute inset-0 pointer-events-none transition-opacity duration-500 ${isHovering ? "opacity-100" : "opacity-0"}`}
+          style={{ background: "radial-gradient(circle 160px at var(--mouse-x, -9999px) var(--mouse-y, -9999px), rgba(236, 72, 153, 0.18), transparent 100%)" }}
+        />
 
         {/* Icon container */}
         <div className="relative z-10 w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-pink-500/15 group-hover:border-pink-500/25 transition-all duration-300">

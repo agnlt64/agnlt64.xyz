@@ -1,12 +1,25 @@
 "use client"
 
 import Link from "next/link"
+import { useRef, useState } from "react"
 import { projects } from "@/data"
 import { ProjectCard } from "@/components/ui/project-card"
 import { ArrowRight } from "lucide-react"
 
 export function ProjectsSection() {
   const featured = projects.filter(p => p.featured)
+  const [isHovering, setIsHovering] = useState(false)
+  const gridRef = useRef<HTMLDivElement>(null)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const cards = gridRef.current?.querySelectorAll<HTMLElement>(".project-card")
+    if (!cards) return
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect()
+      card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`)
+      card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`)
+    })
+  }
 
   return (
     <section className="relative px-6 py-24" id="projects">
@@ -27,19 +40,21 @@ export function ProjectsSection() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div
+          ref={gridRef}
+          className="grid gap-6 md:grid-cols-2"
+          onMouseMove={handleMouseMove}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+        >
           {featured.map((project, index) => (
             <div
               key={project.title}
               className={`animate-fade-in-up opacity-0 stagger-${index + 1}`}
             >
               <ProjectCard
-                title={project.title}
-                description={project.description}
-                content={project.content}
-                technologies={project.technologies}
-                href={project.href}
-                private={project.private}
+                {...project}
+                isHovering={isHovering}
               />
             </div>
           ))}
