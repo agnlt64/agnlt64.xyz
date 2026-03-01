@@ -16,8 +16,8 @@ export function ProjectModal({ project, open, onOpenChange }: ProjectModalProps)
   if (!project) return null
 
   const isPrivate = project.private
-  const hasGitHub = project.href.includes("github.com")
-  const hasLiveLink = !isPrivate && project.href !== "#" && project.href !== ""
+  const hasGitHub = project.href?.includes("github.com")
+  const hasLiveLink = !isPrivate && project.href && project.href !== "#"
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>

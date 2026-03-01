@@ -8,10 +8,11 @@ import { Project } from "@/data"
 
 interface ProjectCardProps extends Project {
   onClick?: () => void
+  isHovering?: boolean
 }
 
 export function ProjectCard(props: ProjectCardProps) {
-  const { title, description, content, technologies, href, onClick } = props;
+  const { title, description, content, technologies, href, onClick, isHovering = false } = props;
   const isPrivate = props.private;
   const isExpandable = !!onClick;
   const hasGithub = href?.includes('github.com');
@@ -19,14 +20,19 @@ export function ProjectCard(props: ProjectCardProps) {
   const cardInner = (
     <Card
       className="
-        group h-full relative overflow-hidden
+        project-card group h-full relative overflow-hidden
         glass hover-glow
         border border-white/10 hover:border-pink-500/40
         transition-all duration-300 cursor-pointer
       "
     >
-      {/* Animated gradient background on hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-pink-500/0 via-transparent to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      {/* Cursor spotlight */}
+      <div
+        className={`absolute inset-0 pointer-events-none transition-opacity duration-500 ${isHovering ? "opacity-100" : "opacity-0"}`}
+        style={{
+          background: "radial-gradient(circle 260px at var(--mouse-x, -9999px) var(--mouse-y, -9999px), rgba(236, 72, 153, 0.15), transparent 100%)"
+        }}
+      />
 
       {/* Top accent line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
