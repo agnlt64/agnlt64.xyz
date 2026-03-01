@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "agnlt64.xyz",
   description: "absolute coding",
+  icons: {
+    icon: '/favicon.svg'
+  }
 };
 
 export default function RootLayout({
