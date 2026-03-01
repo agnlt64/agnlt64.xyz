@@ -142,9 +142,10 @@ export type Project = {
   description: string;
   content: string;
   technologies: string[];
-  href: string;
+  href?: string;
   private?: boolean;
   featured?: boolean;
+  image?: string;
 }
 
 export const projects: Project[] = [
@@ -155,6 +156,7 @@ export const projects: Project[] = [
     technologies: ["Python", "Flask", "SQLite", "HTML", "Tailwind", "JavaScript"],
     href: "https://github.com/agnlt64/go-upjv",
     featured: true,
+    image: "goupjv.png"
   },
   {
     title: "GoGPT",
@@ -163,13 +165,15 @@ export const projects: Project[] = [
     technologies: ["Go", "OpenAI's API"],
     href: "https://github.com/agnlt64/go-gpt",
     featured: true,
+    image: "gogpt.png",
   },
   {
     title: "C everyday",
     description: "Programming various algorithms in C everyday.",
     content: "I created this repository to practice C programming by implementing various algorithms and data structures. It's a great way to improve my coding skills and learn new techniques. I uploaded a new video every day on my YouTube channel. I chose to stop because I was going insane.",
     technologies: ["C", "Raylib"],
-    href: "https://github.com/agnlt64/c-everyday"
+    href: "https://github.com/agnlt64/c-everyday",
+    image: "c-everyday.png"
   },
   {
     title: "Meta React",
@@ -186,20 +190,21 @@ export const projects: Project[] = [
     technologies: ["TypeScript", "Next.js", "Prisma", "SQLite", "Tailwind CSS", "VSCode extension"],
     href: "https://github.com/agnlt64/timecode",
     featured: true,
+    image: "timecode.png",
   },
   {
     title: "Portfolio Website",
     description: "My personal portfolio website.",
     content: "A sleek, modern portfolio website built with Next.js and Tailwind CSS. Showcases my projects, skills, and background in a clean, responsive design.",
     technologies: ["Next.js", "Tailwind CSS", "shadcn"],
-    href: "#"
   },
   {
     title: "Python Search Engine",
     description: "A custom search engine that indexes a Python codebase.",
     content: "Parses your codebase using Python's native AST module and indexes all of the functions. The results are displayed in a user-friendly web export type.",
     technologies: ["Python", "Flask", "JavaScript"],
-    href: "https://github.com/agnlt64/PPI"
+    href: "https://github.com/agnlt64/PPI",
+    image: "ppi.png"
   },
   {
     title: "Next.js clone",
@@ -207,6 +212,7 @@ export const projects: Project[] = [
     content: "A very loyal copy of the Next.js official website. Not the whole website, and contains custom pages.",
     technologies: ["HTML", "CSS", "JavaScript"],
     href: "https://github.com/agnlt64/nextjs-clone",
+    image: "nextjs-clone.png"
   },
   {
     title: "Java Tool",
@@ -222,6 +228,7 @@ export const projects: Project[] = [
     technologies: ["Next.js", "Prisma", "TypeScript", "Tailwind CSS"],
     href: "#",
     private: true,
+    image: "journal.png"
   },
 ]
 

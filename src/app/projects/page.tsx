@@ -2,7 +2,7 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
-import { ProjectCard } from "@/components/ui/project-card"
+import { ProjectsGrid } from "@/components/sections/projects-grid"
 import { projects } from "@/data"
 
 export const metadata = {
@@ -86,23 +86,7 @@ export default function ProjectsPage() {
             <div className="section-divider mb-12" />
 
             {/* Projects grid */}
-            <div className="grid gap-6 md:grid-cols-2">
-              {projects.map((project, index) => (
-                <div
-                  key={project.title}
-                  className={`animate-fade-in-up opacity-0 stagger-${Math.min(index + 1, 8)}`}
-                >
-                  <ProjectCard
-                    title={project.title}
-                    description={project.description}
-                    content={project.content}
-                    technologies={project.technologies}
-                    href={project.href}
-                    private={project.private}
-                  />
-                </div>
-              ))}
-            </div>
+            <ProjectsGrid projects={projects} />
           </div>
         </section>
       </main>
