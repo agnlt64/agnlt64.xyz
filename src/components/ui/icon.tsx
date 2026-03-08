@@ -9,7 +9,8 @@ import {
   Cpu,
   GraduationCap,
   LucideIcon,
-  Bot
+  Bot,
+  Music
 } from "lucide-react"
 import {
   siYoutube,
@@ -70,6 +71,7 @@ export const iconMap: Record<string, IconComponent> = {
   Wrench,
   Cpu,
   Bot,
+  Music,
   GraduationCap,
   Youtube: siYoutube,
   Instagram: siInstagram,

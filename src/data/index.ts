@@ -258,5 +258,10 @@ export const socialLinks: SocialLink[] = [
     name: "GitHub",
     icon: "Github",
     href: "https://github.com/agnlt64"
+  },
+  {
+    name: "Music",
+    icon: "Music",
+    href: "https://dring.agnlt64.xyz"
   }
 ]
