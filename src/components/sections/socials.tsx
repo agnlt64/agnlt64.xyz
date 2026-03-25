@@ -38,9 +38,10 @@ export function SocialsSection() {
         </div>
 
         {/* Social buttons grid */}
+        {/* grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 */}
         <div
           ref={gridRef}
-          className="grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
+          className="grid gap-4 grid-cols-3"
           onMouseMove={handleMouseMove}
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}

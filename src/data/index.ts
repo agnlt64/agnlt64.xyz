@@ -239,11 +239,11 @@ export type SocialLink = {
 }
 
 export const socialLinks: SocialLink[] = [
-  {
-    name: "YouTube",
-    icon: "Youtube",
-    href: "https://www.youtube.com/@agnlt"
-  },
+  // {
+  //   name: "YouTube",
+  //   icon: "Youtube",
+  //   href: "https://www.youtube.com/@agnlt"
+  // },
   {
     name: "Instagram",
     icon: "Instagram",
@@ -259,9 +259,9 @@ export const socialLinks: SocialLink[] = [
     icon: "Github",
     href: "https://github.com/agnlt64"
   },
-  {
-    name: "Music",
-    icon: "Music",
-    href: "https://dring.agnlt64.xyz"
-  }
+  // {
+  //   name: "Music",
+  //   icon: "Music",
+  //   href: "https://dring.agnlt64.xyz"
+  // }
 ]
