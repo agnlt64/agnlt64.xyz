@@ -66,7 +66,7 @@ export function HeroSection() {
       {/* Scroll indicator - positioned at bottom of section */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-fade-in opacity-0 stagger-5">
         <Link
-          href="#programming"
+          href="#about"
           className="flex flex-col items-center gap-2 text-muted-foreground"
         >
           <span className="text-xs uppercase tracking-widest">Scroll</span>
@@ -74,5 +74,5 @@ export function HeroSection() {
         </Link>
       </div>
     </section>
-  )
+  );
 }
