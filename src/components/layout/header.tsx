@@ -1,5 +1,6 @@
 "use client"
 
+import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
@@ -17,12 +18,13 @@ export function Header() {
 
   return (
     <header
-      className={`
+      className={cn(`
         fixed top-0 left-0 right-0 m-2 p-6 z-50
         transition-all duration-500
         rounded-2xl
-        ${scrolled ? 'glass-strong py-4' : 'bg-transparent'}
-      `}
+        border
+        border-transparent
+      `, scrolled ? 'glass-strong py-4' : 'bg-transparent')}
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Link href="/" className="block group">
@@ -32,7 +34,6 @@ export function Header() {
           </h1>
         </Link>
 
-        {/* Optional: Add nav links here for desktop */}
         <nav className="hidden md:flex items-center gap-6">
           <Link
             href="/#programming"
