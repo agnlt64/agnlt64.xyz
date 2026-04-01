@@ -105,7 +105,7 @@ export function ProjectCard(props: ProjectCardProps) {
         {isExpandable || <ExternalLink className="w-5 h-5 text-pink-500" />}
       </div>
     </Card>
-  )
+  );
 
   if (onClick) {
     return (

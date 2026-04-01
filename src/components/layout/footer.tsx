@@ -4,7 +4,7 @@ import { siteConfig } from "@/data"
 import { Heart } from "lucide-react"
 
 export function Footer() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="relative border-t border-white/5 px-6 py-12">

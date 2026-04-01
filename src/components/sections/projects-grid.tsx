@@ -10,19 +10,19 @@ interface ProjectsGridProps {
 }
 
 export function ProjectsGrid({ projects }: ProjectsGridProps) {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
-  const [isHovering, setIsHovering] = useState(false)
-  const gridRef = useRef<HTMLDivElement>(null)
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isHovering, setIsHovering] = useState(false);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const cards = gridRef.current?.querySelectorAll<HTMLElement>(".project-card")
-    if (!cards) return
+    const cards = gridRef.current?.querySelectorAll<HTMLElement>(".project-card");
+    if (!cards) return;
     cards.forEach(card => {
-      const rect = card.getBoundingClientRect()
-      card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`)
-      card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`)
-    })
-  }
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+      card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+    });
+  };
 
   return (
     <>
@@ -50,8 +50,8 @@ export function ProjectsGrid({ projects }: ProjectsGridProps) {
       <ProjectModal
         project={selectedProject}
         open={selectedProject !== null}
-        onOpenChange={(open) => { if (!open) setSelectedProject(null) }}
+        onOpenChange={(open) => { if (!open) setSelectedProject(null); }}
       />
     </>
-  )
+  );
 }

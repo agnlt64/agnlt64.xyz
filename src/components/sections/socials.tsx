@@ -5,18 +5,18 @@ import { socialLinks } from "@/data"
 import { SocialButton } from "@/components/ui/social-button"
 
 export function SocialsSection() {
-  const [isHovering, setIsHovering] = useState(false)
-  const gridRef = useRef<HTMLDivElement>(null)
+  const [isHovering, setIsHovering] = useState(false);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const cards = gridRef.current?.querySelectorAll<HTMLElement>(".social-button")
-    if (!cards) return
+    const cards = gridRef.current?.querySelectorAll<HTMLElement>(".social-button");
+    if (!cards) return;
     cards.forEach(card => {
-      const rect = card.getBoundingClientRect()
-      card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`)
-      card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`)
-    })
-  }
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+      card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+    });
+  };
 
   return (
     <section className="relative px-6 py-8 md:py-24" id="socials">
@@ -62,5 +62,5 @@ export function SocialsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

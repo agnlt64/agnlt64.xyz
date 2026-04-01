@@ -87,7 +87,7 @@ interface IconProps {
 }
 
 export function Icon({ name, className }: IconProps) {
-  const IconComponent = iconMap[name]
+  const IconComponent = iconMap[name];
 
   if (!IconComponent) {
     return null
@@ -109,6 +109,6 @@ export function Icon({ name, className }: IconProps) {
   }
 
   // It's a Lucide icon or React component
-  const Component = IconComponent as LucideIcon | ComponentType<{ className?: string }>
-  return <Component className={className} />
+  const Component = IconComponent as LucideIcon | ComponentType<{ className?: string }>;
+  return <Component className={className} />;
 }

@@ -6,19 +6,19 @@ import { skillCategories } from "@/data"
 import { Icon } from "@/components/ui/icon"
 
 export function SkillsSection() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const [isHovering, setIsHovering] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isHovering, setIsHovering] = useState(false);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    const cards = sectionRef.current?.querySelectorAll<HTMLElement>(".skill-card")
-    if (!cards) return
+    const cards = sectionRef.current?.querySelectorAll<HTMLElement>(".skill-card");
+    if (!cards) return;
 
     cards.forEach(card => {
-      const rect = card.getBoundingClientRect()
-      card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`)
-      card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`)
-    })
-  }
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+      card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+    });
+  };
 
   return (
     <section
@@ -101,5 +101,5 @@ export function SkillsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
