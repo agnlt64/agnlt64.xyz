@@ -64,7 +64,7 @@ export function SocialsSection() {
         </div>
         <Button
           variant="link"
-          className="mt-2 hover:cursor-pointer"
+          className="mt-2"
           onClick={() => {
             navigator.clipboard.writeText("genelot.antonin@gmail.com");
             toast.success("Email address copied to clipboard!");

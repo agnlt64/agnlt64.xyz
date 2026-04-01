@@ -4,6 +4,7 @@ import Image from "next/image";
 import { X, Github, ExternalLink, Lock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 import { Project } from "@/data";
 
 interface ProjectModalProps {
@@ -54,13 +55,13 @@ export function ProjectModal({ project, open, onOpenChange }: ProjectModalProps)
                 </Badge>
               )}
             </div>
-            <button
+            <Button
               onClick={() => onOpenChange(false)}
               className="shrink-0 w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-pink-500/10 hover:border-pink-500/30 transition-all duration-200"
               aria-label="Close"
             >
               <X className="w-4 h-4 text-muted-foreground" />
-            </button>
+            </Button>
           </div>
 
           {/* Short description */}
