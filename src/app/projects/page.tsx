@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { ProjectsGrid } from "@/components/sections/projects-grid"
 import { projects } from "@/data"
+import { Suspense } from "react"
 
 export const metadata = {
   title: "Projects — agnlt64.xyz",
@@ -29,7 +30,9 @@ export default function ProjectsPage() {
       />
       <div className="noise-overlay" />
 
-      <Header />
+      <Suspense>
+        <Header />
+      </Suspense>
 
       <main>
         <section className="relative px-6 pt-40 pb-24">

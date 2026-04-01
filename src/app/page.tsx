@@ -6,6 +6,7 @@ import { EducationSection } from "@/components/sections/education";
 import { SkillsSection } from "@/components/sections/skills";
 import { ProjectsSection } from "@/components/sections/projects";
 import { SocialsSection } from "@/components/sections/socials";
+import { Suspense } from "react";
 
 export default async function HomePage({
   searchParams,
