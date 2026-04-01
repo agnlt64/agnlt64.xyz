@@ -6,7 +6,7 @@ import { siteConfig, navigation } from "@/data";
 import { Icon } from "@/components/ui/icon";
 import { ChevronsDown } from "lucide-react";
 
-export function HeroSection() {
+export function HeroSection({ iutMode = false }: { iutMode?: boolean }) {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-12 overflow-hidden">
       {/* Animated background blobs */}
@@ -32,7 +32,7 @@ export function HeroSection() {
           {/* Main title */}
           <h1 className="mb-6 text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-balance animate-fade-in-up opacity-0 stagger-2">
             <span className="block text-white/90">Hey, I&apos;m</span>
-            <span className="gradient-text-pink animate-text-glow">{siteConfig.name}</span>
+            <span className="gradient-text-pink animate-text-glow">{iutMode ? "Antonin GENELOT" : siteConfig.name}</span>
           </h1>
 
           {/* Tagline with typewriter effect appearance */}

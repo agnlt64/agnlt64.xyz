@@ -36,7 +36,7 @@ export default async function HomePage({
       {/* Main content */}
       <Header />
       <main>
-        <HeroSection />
+        <HeroSection iutMode={iutMode} />
         <AboutSection />
         <SkillsSection />
         <EducationSection />
