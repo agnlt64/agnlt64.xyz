@@ -140,7 +140,7 @@ export function SocialsSection() {
                       name="content"
                       rows={4}
                       placeholder="Your message..."
-                      className="w-full rounded-md border border-white/10 bg-white/[0.04] px-3 py-2 text-sm placeholder:text-muted-foreground/50 outline-none transition-[color,box-shadow] focus-visible:border-primary/60 focus-visible:ring-[3px] focus-visible:ring-primary/20 resize-none"
+                      className="w-full rounded-md border border-white/10 bg-white/[0.04] px-3 py-2 text-sm placeholder:text-muted-foreground/50 outline-none transition-[color,box-shadow] focus-visible:border-primary/60 focus-visible:ring-[3px] focus-visible:ring-primary/20 resize-y"
                     />
                   </Field>
                 </FieldGroup>
