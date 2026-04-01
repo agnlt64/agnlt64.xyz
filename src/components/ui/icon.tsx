@@ -11,7 +11,7 @@ import {
   LucideIcon,
   Bot,
   Music
-} from "lucide-react"
+} from "lucide-react";
 import {
   siYoutube,
   siInstagram,
@@ -19,7 +19,7 @@ import {
   siGithub,
   SimpleIcon
 } from "simple-icons"
-import { ComponentType } from "react"
+import { ComponentType } from "react";
 
 // Custom Microsoft icon component
 function MicrosoftIcon({ className }: { className?: string }) {
@@ -35,7 +35,7 @@ function MicrosoftIcon({ className }: { className?: string }) {
       <path d="M11.4 12.6H0V24h11.4V12.6z" />
       <path d="M24 12.6H12.6V24H24V12.6z" />
     </svg>
-  )
+  );
 }
 
 function QwerioIcon({ className }: { className?: string }) {
@@ -56,10 +56,10 @@ function QwerioIcon({ className }: { className?: string }) {
       <path d="M89.9922 83.4101C97.8048 83.1979 106.38 82.9677 115.38 84.9244C119.861 77.5111 124.948 59.9578 114.311 41.6673C105.639 26.7506 90.3195 18.715 75.9209 20.3912C104.193 21.9523 107.193 48.6526 107.193 51.5841C107.193 58.3716 105.053 64.8209 101.003 70.2344C97.0782 75.4788 91.4993 79.4318 85.2874 81.367C83.845 81.8166 82.3558 82.1619 80.8595 82.3957C78.1905 82.8094 75.4065 82.8777 72.7088 82.5972L72.3994 82.5648C71.3635 82.4461 70.3276 82.2698 69.3096 82.0468V82.2051C75.6547 83.7949 82.3343 83.6187 89.9886 83.4101H89.9922Z" />
       <path d="M75.9964 20.5204C78.4639 20.5204 80.8631 20.8189 83.1688 21.362C82.8846 21.2865 82.6004 21.2146 82.3091 21.1426C94.9201 22.0599 105.373 27.2251 114.315 41.6669C124.034 57.3677 120.854 76.3237 115.354 84.9133C124.372 74.7375 127.581 62.5869 127.581 51.6989C127.581 37.9189 122.214 24.9662 112.47 15.222C102.729 5.48142 89.7764 0.114746 75.9964 0.114746" />
     </svg>
-  )
+  );
 }
 
-type IconComponent = LucideIcon | ComponentType<{ className?: string }> | SimpleIcon
+type IconComponent = LucideIcon | ComponentType<{ className?: string }> | SimpleIcon;
 
 export const iconMap: Record<string, IconComponent> = {
   Code,
@@ -90,7 +90,7 @@ export function Icon({ name, className }: IconProps) {
   const IconComponent = iconMap[name];
 
   if (!IconComponent) {
-    return null
+    return null;
   }
 
   // Check if it's a SimpleIcon (has 'path' property)
@@ -105,7 +105,7 @@ export function Icon({ name, className }: IconProps) {
       >
         <path d={IconComponent.path} />
       </svg>
-    )
+    );
   }
 
   // It's a Lucide icon or React component

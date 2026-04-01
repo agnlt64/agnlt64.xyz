@@ -1,7 +1,7 @@
 "use client"
 
-import { siteConfig } from "@/data"
-import { Heart } from "lucide-react"
+import { siteConfig } from "@/data";
+import { Heart } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();

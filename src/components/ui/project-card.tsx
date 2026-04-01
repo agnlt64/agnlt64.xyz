@@ -1,14 +1,14 @@
 "use client"
 
-import Link from "next/link"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Lock, Github, Maximize2 } from "lucide-react"
-import { Project } from "@/data"
+import Link from "next/link";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Lock, Github, Maximize2 } from "lucide-react";
+import { Project } from "@/data";
 
 interface ProjectCardProps extends Project {
-  onClick?: () => void
-  isHovering?: boolean
+  onClick?: () => void;
+  isHovering?: boolean;
 }
 
 export function ProjectCard(props: ProjectCardProps) {
@@ -112,7 +112,7 @@ export function ProjectCard(props: ProjectCardProps) {
       <button onClick={onClick} className="block h-full w-full text-left">
         {cardInner}
       </button>
-    )
+    );
   }
 
   return (
@@ -123,5 +123,5 @@ export function ProjectCard(props: ProjectCardProps) {
       : <div className="block h-full">
         {cardInner}
       </div>
-  )
+  );
 }

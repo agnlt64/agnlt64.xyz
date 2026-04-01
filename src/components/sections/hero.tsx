@@ -1,10 +1,10 @@
 "use client"
 
-import Link from "next/link"
-import { Badge } from "@/components/ui/badge"
-import { siteConfig, navigation } from "@/data"
-import { Icon } from "@/components/ui/icon"
-import { ChevronsDown } from "lucide-react"
+import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { siteConfig, navigation } from "@/data";
+import { Icon } from "@/components/ui/icon";
+import { ChevronsDown } from "lucide-react";
 
 export function HeroSection() {
   return (

@@ -1,7 +1,7 @@
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/ui/badge";
 
 interface SkillBadgeProps {
-  skill: string
+  skill: string;
 }
 
 export function SkillBadge({ skill }: SkillBadgeProps) {
@@ -9,5 +9,5 @@ export function SkillBadge({ skill }: SkillBadgeProps) {
     <Badge variant="outline" className="text-sm px-3 py-1">
       {skill}
     </Badge>
-  )
+  );
 }

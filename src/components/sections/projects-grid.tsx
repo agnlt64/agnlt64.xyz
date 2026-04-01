@@ -1,9 +1,9 @@
 "use client"
 
-import { useRef, useState } from "react"
-import { ProjectCard } from "@/components/ui/project-card"
-import { ProjectModal } from "@/components/ui/project-modal"
-import { Project } from "@/data"
+import { useRef, useState } from "react";
+import { ProjectCard } from "@/components/ui/project-card";
+import { ProjectModal } from "@/components/ui/project-modal";
+import { Project } from "@/data";
 
 interface ProjectsGridProps {
   projects: Project[]

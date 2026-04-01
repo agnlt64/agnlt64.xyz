@@ -1,10 +1,10 @@
 "use client"
 
-import { useRef, useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card"
-import { education, internships } from "@/data"
-import { Icon } from "@/components/ui/icon"
-import { Calendar, MapPin } from "lucide-react"
+import { useRef, useState } from "react";
+import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
+import { education, internships } from "@/data";
+import { Icon } from "@/components/ui/icon";
+import { Calendar, MapPin } from "lucide-react";
 
 export function EducationSection() {
   const [isHovering, setIsHovering] = useState(false);

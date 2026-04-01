@@ -1,9 +1,9 @@
 "use client"
 
-import { useRef, useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { skillCategories } from "@/data"
-import { Icon } from "@/components/ui/icon"
+import { useRef, useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { skillCategories } from "@/data";
+import { Icon } from "@/components/ui/icon";
 
 export function SkillsSection() {
   const sectionRef = useRef<HTMLElement>(null);

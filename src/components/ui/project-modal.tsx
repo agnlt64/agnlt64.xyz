@@ -1,23 +1,23 @@
 "use client"
 
-import Image from "next/image"
-import { X, Github, ExternalLink, Lock } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
-import { Project } from "@/data"
+import Image from "next/image";
+import { X, Github, ExternalLink, Lock } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { Project } from "@/data";
 
 interface ProjectModalProps {
-  project: Project | null
-  open: boolean
-  onOpenChange: (open: boolean) => void
+  project: Project | null;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
 }
 
 export function ProjectModal({ project, open, onOpenChange }: ProjectModalProps) {
-  if (!project) return null
+  if (!project) return null;
 
-  const isPrivate = project.private
-  const hasGitHub = project.href?.includes("github.com")
-  const hasLiveLink = !isPrivate && project.href && project.href !== "#"
+  const isPrivate = project.private;
+  const hasGitHub = project.href?.includes("github.com");
+  const hasLiveLink = !isPrivate && project.href && project.href !== "#";
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -113,5 +113,5 @@ export function ProjectModal({ project, open, onOpenChange }: ProjectModalProps)
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

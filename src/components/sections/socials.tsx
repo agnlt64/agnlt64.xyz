@@ -1,8 +1,8 @@
 "use client"
 
-import { useRef, useState } from "react"
-import { socialLinks } from "@/data"
-import { SocialButton } from "@/components/ui/social-button"
+import { useRef, useState } from "react";
+import { socialLinks } from "@/data";
+import { SocialButton } from "@/components/ui/social-button";
 
 export function SocialsSection() {
   const [isHovering, setIsHovering] = useState(false);

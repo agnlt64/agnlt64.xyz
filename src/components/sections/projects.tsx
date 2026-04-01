@@ -1,10 +1,10 @@
 "use client"
 
-import Link from "next/link"
-import { useRef, useState } from "react"
-import { projects } from "@/data"
-import { ProjectCard } from "@/components/ui/project-card"
-import { ArrowRight } from "lucide-react"
+import Link from "next/link";
+import { useRef, useState } from "react";
+import { projects } from "@/data";
+import { ProjectCard } from "@/components/ui/project-card";
+import { ArrowRight } from "lucide-react";
 
 export function ProjectsSection() {
   const featured = projects.filter(p => p.featured);

@@ -1,11 +1,11 @@
 "use client"
 
-import Link from "next/link"
-import { Icon } from "@/components/ui/icon"
-import { SocialLink } from "@/data"
+import Link from "next/link";
+import { Icon } from "@/components/ui/icon";
+import { SocialLink } from "@/data";
 
 interface SocialButtonProps extends SocialLink {
-  isHovering?: boolean
+  isHovering?: boolean;
 }
 
 export function SocialButton({ name, icon, href, isHovering = false }: SocialButtonProps) {
@@ -39,5 +39,5 @@ export function SocialButton({ name, icon, href, isHovering = false }: SocialBut
         </span>
       </div>
     </Link>
-  )
+  );
 }

@@ -1,8 +1,8 @@
 "use client"
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { aboutCards } from "@/data"
-import { Icon } from "@/components/ui/icon"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { aboutCards } from "@/data";
+import { Icon } from "@/components/ui/icon";
 
 export function AboutSection() {
   return (
