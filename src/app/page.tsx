@@ -7,7 +7,14 @@ import { SkillsSection } from "@/components/sections/skills";
 import { ProjectsSection } from "@/components/sections/projects";
 import { SocialsSection } from "@/components/sections/socials";
 
-export default function HomePage() {
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ mode?: string }>;
+}) {
+  const { mode } = await searchParams;
+  const iutMode = mode === "iut";
+
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Multi-layer gradient background */}
@@ -34,7 +41,7 @@ export default function HomePage() {
         <SkillsSection />
         <EducationSection />
         <ProjectsSection />
-        <SocialsSection />
+        <SocialsSection iutMode={iutMode} />
       </main>
       <Footer />
     </div>

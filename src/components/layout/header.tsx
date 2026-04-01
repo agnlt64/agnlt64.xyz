@@ -1,9 +1,10 @@
 "use client"
 
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Check } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { href: "/#about", label: "About" },
@@ -14,6 +15,7 @@ const navLinks = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [iutMode, setIutMode] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,11 +46,20 @@ export function Header() {
         `, scrolled ? 'glass-strong py-4' : 'bg-transparent')}
       >
         <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <Link href="/" className="block group" onClick={closeMenu}>
+          <Link href="/" className="flex gap-4 group" onClick={closeMenu}>
             <h1 className="text-2xl font-bold">
               <span className="text-white">agnlt64</span>
               <span className="text-pink-500">.xyz</span>
             </h1>
+            <div>
+              <Button variant="secondary" onClick={() => setIutMode(!iutMode)}>
+                {iutMode ? 
+                  <X />  :
+                  <Check />
+                }
+                IUT Mode
+              </Button>
+            </div>
           </Link>
 
           {/* Desktop nav */}

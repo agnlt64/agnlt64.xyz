@@ -1,12 +1,13 @@
 "use client"
 
 import { useRef, useState } from "react";
-import { socialLinks } from "@/data";
+import { socialLinks, iutSocialLink } from "@/data";
 import { SocialButton } from "@/components/ui/social-button";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner"
 
-export function SocialsSection() {
+export function SocialsSection({ iutMode = false }: { iutMode?: boolean }) {
+  const links = iutMode ? [...socialLinks, iutSocialLink] : socialLinks;
   const [isHovering, setIsHovering] = useState(false);
   const gridRef = useRef<HTMLDivElement>(null);
 
@@ -43,12 +44,12 @@ export function SocialsSection() {
         {/* grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 */}
         <div
           ref={gridRef}
-          className="grid gap-4 grid-cols-3"
+          className={`grid gap-4 ${iutMode ? "grid-cols-4" : "grid-cols-3"}`}
           onMouseMove={handleMouseMove}
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
         >
-          {socialLinks.map((social, index) => (
+          {links.map((social, index) => (
             <div
               key={social.name}
               className={`animate-fade-in-up opacity-0 stagger-${index + 1}`}

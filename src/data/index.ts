@@ -241,6 +241,12 @@ export type SocialLink = {
   href: string;
 }
 
+export const iutSocialLink: SocialLink = {
+  name: "Linkedin",
+  icon: "Linkedin",
+  href: "#", // TODO
+}
+
 export const socialLinks: SocialLink[] = [
   // {
   //   name: "YouTube",
