@@ -22,7 +22,7 @@ export function ProjectsSection() {
   }
 
   return (
-    <section className="relative px-6 py-24" id="projects">
+    <section className="relative px-6 py-8 md:py-24" id="projects">
       {/* Background decoration */}
       <div className="blob-pink w-80 h-80 bottom-1/4 -right-40 opacity-20" />
 

@@ -63,6 +63,7 @@ export const education: Education = {
 
 export type Internship = {
   company: string;
+  where: string;
   period: string;
   description: string;
   icon: string;
@@ -70,13 +71,15 @@ export type Internship = {
 
 export const internships: Internship[] = [
   {
-    company: "Qwerio - Strasbourg, France",
+    company: "Qwerio",
+    where: "Strasbourg, France",
     period: "19/01/2026 - 13/03/2026",
     description: "A two-month long internship, during which I discovered the Microsoft ecosystem for entreprises. I created apps with PowerApps, PowerAutomate and Dataverse. I set up a Copilot chatbot for a client using SPFx and Bot Framework. Finally, I developped an application using AI and agentic coding for a client. I've tested multiple models to find the most successful ones in the Microsoft ecosystem.",
     icon: "Qwerio"
   },
   {
-    company: "Microsoft - Issy-les-Moulineaux, France",
+    company: "Microsoft",
+    where: "Issy-les-Moulineaux, France",
     period: "06/2022",
     description: "A week-long internship providing insights into the tech industry, Microsoft culture, and hands-on experience with software development practices. During the week, I participated in a project group and presented our innovation to a panel of various people.",
     icon: "Microsoft"
@@ -149,6 +152,15 @@ export type Project = {
 }
 
 export const projects: Project[] = [
+    {
+    title: "Timecode",
+    description: "A VSCode extension to keep track of how much time you spend coding.",
+    content: "Includes a dashboard to visualize stats and API to store data in a SQLite database. Fully open-source, free and self-hostable.",
+    technologies: ["TypeScript", "Next.js", "Prisma", "SQLite", "Tailwind CSS", "VSCode extension"],
+    href: "https://github.com/agnlt64/timecode",
+    featured: true,
+    image: "timecode.png",
+  },
   {
     title: "GoUPJV",
     description: "A carpooling app for my university.",
@@ -182,15 +194,6 @@ export const projects: Project[] = [
     technologies: ["TypeScript", "Next.js", "Go"],
     href: "https://github.com/agnlt64/meta-react",
     featured: true,
-  },
-  {
-    title: "Timecode",
-    description: "A VSCode extension to keep track of how much time you spend coding.",
-    content: "Includes a dashboard to visualize stats and API to store data in a SQLite database. Fully open-source, free and self-hostable.",
-    technologies: ["TypeScript", "Next.js", "Prisma", "SQLite", "Tailwind CSS", "VSCode extension"],
-    href: "https://github.com/agnlt64/timecode",
-    featured: true,
-    image: "timecode.png",
   },
   {
     title: "Portfolio Website",

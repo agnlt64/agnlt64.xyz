@@ -23,7 +23,7 @@ export function EducationSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative px-6 py-24"
+      className="relative px-6 py-8 md:py-24"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
@@ -70,27 +70,27 @@ export function EducationSection() {
 
             <CardHeader className="relative z-10">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col items-start gap-4">
                   {/* Icon container */}
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500/20 to-pink-600/10 flex items-center justify-center border border-pink-500/20 group-hover:glow-pink transition-all duration-300 shrink-0">
-                    <Icon name={education.icon} className="w-8 h-8 text-primary" />
+                  <div className="flex gap-4 items-center">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500/20 to-pink-600/10 flex items-center justify-center border border-pink-500/20 group-hover:glow-pink transition-all duration-300 shrink-0">
+                      <Icon name={education.icon} className="w-8 h-8 text-primary" />
+                    </div>
+                    <span className="text-2xl mb-2 font-semibold">
+                      {education.degree}
+                    </span>
                   </div>
 
-                  <div>
-                    <CardTitle className="text-2xl mb-2">
-                      {education.degree}
-                    </CardTitle>
-                    <CardDescription className="text-base flex flex-col gap-1">
-                      <span className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4 text-pink-500" />
-                        {education.institution}
-                      </span>
-                      <span className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4 text-pink-500" />
-                        {education.graduation}
-                      </span>
-                    </CardDescription>
-                  </div>
+                  <CardDescription className="text-base flex flex-col gap-1">
+                    <span className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-pink-500" />
+                      {education.institution}
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4 text-pink-500" />
+                      {education.graduation}
+                    </span>
+                  </CardDescription>
                 </div>
 
                 {/* Status badge */}
@@ -128,7 +128,7 @@ export function EducationSection() {
           {internships.length > 0 && (
             <div className="mt-12">
               <h3 className="text-2xl font-bold mb-6 ml-0 md:ml-16">Internships</h3>
-              
+
               <div className="space-y-6">
                 {internships.map((internship, index) => (
                   <Card
@@ -156,26 +156,26 @@ export function EducationSection() {
 
                     <CardHeader className="relative z-10">
                       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                        <div className="flex items-start gap-4">
-                          {/* Icon container */}
-                          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500/20 to-pink-600/10 flex items-center justify-center border border-pink-500/20 group-hover:glow-pink transition-all duration-300 shrink-0">
-                            <Icon name={internship.icon} className="w-8 h-8 text-primary" />
+                        <div className="flex flex-col items-start gap-4">
+                          <div className="flex gap-4 items-center">
+                            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500/20 to-pink-600/10 flex items-center justify-center border border-pink-500/20 group-hover:glow-pink transition-all duration-300 shrink-0">
+                              <Icon name={internship.icon} className="w-8 h-8 text-primary" />
+                            </div>
+                            <span className="text-2xl mb-2 font-semibold">
+                              {internship.company}
+                            </span>
                           </div>
 
-                          <div>
-                            <CardTitle className="text-xl mb-2">
-                              <span className="flex items-center gap-2">
-                                <MapPin className="w-4 h-4 text-pink-500" />
-                                {internship.company}
-                              </span>
-                            </CardTitle>
-                            <CardDescription className="text-base flex flex-col gap-1">
-                              <span className="flex items-center gap-2">
-                                <Calendar className="w-4 h-4 text-pink-500" />
-                                {internship.period}
-                              </span>
-                            </CardDescription>
-                          </div>
+                          <CardDescription className="text-base flex flex-col gap-1">
+                            <span className="flex items-center gap-2">
+                              <MapPin className="w-4 h-4 text-pink-500" />
+                              {internship.where}
+                            </span>
+                            <span className="flex items-center gap-2">
+                              <Calendar className="w-4 h-4 text-pink-500" />
+                              {internship.period}
+                            </span>
+                          </CardDescription>
                         </div>
                       </div>
                     </CardHeader>

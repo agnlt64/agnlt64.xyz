@@ -19,7 +19,7 @@ export function SocialsSection() {
   }
 
   return (
-    <section className="relative px-6 py-24" id="socials">
+    <section className="relative px-6 py-8 md:py-24" id="socials">
       {/* Section divider */}
       <div className="section-divider w-full mx-auto mb-16" />
 

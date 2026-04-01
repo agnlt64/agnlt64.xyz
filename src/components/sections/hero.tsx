@@ -29,17 +29,6 @@ export function HeroSection() {
       <div className="relative mx-auto max-w-4xl z-10">
         {/* Main content */}
         <div className="mb-10 text-center">
-          {/* Greeting badge */}
-          <div className="animate-fade-in-up opacity-0 stagger-1 mb-6">
-            <Badge
-              variant="outline"
-              className="px-4 py-1.5 text-sm border-pink-500/30 bg-pink-500/5 backdrop-blur-sm"
-            >
-              <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse mr-2" />
-              Available for opportunities
-            </Badge>
-          </div>
-
           {/* Main title */}
           <h1 className="mb-6 text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-balance animate-fade-in-up opacity-0 stagger-2">
             <span className="block text-white/90">Hey, I&apos;m</span>

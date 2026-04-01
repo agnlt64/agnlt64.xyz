@@ -6,7 +6,7 @@ import { Icon } from "@/components/ui/icon"
 
 export function AboutSection() {
   return (
-    <section className="relative px-6 py-24" id="about">
+    <section className="relative px-6 py-8 md:py-24" id="about">
       {/* Section divider */}
       <div className="section-divider w-full mx-auto mb-16" />
 
