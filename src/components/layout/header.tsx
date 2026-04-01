@@ -36,7 +36,7 @@ export function Header() {
 
         <nav className="hidden md:flex items-center gap-6">
           <Link
-            href="/#programming"
+            href="/#about"
             className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
           >
             About
