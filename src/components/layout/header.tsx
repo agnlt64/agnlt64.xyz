@@ -36,7 +36,7 @@ export function Header() {
     <>
       <header
         className={cn(`
-          fixed top-0 left-0 right-0 m-2 p-6 z-50
+          fixed top-0 left-0 right-0 m-2 p-6 z-[60]
           transition-all duration-500
           rounded-2xl
           border
