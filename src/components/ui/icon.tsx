@@ -10,7 +10,8 @@ import {
   GraduationCap,
   LucideIcon,
   Bot,
-  Music
+  Music,
+  Heart
 } from "lucide-react";
 import {
   siYoutube,
@@ -18,7 +19,7 @@ import {
   siDiscord,
   siGithub,
   SimpleIcon
-} from "simple-icons"
+} from "simple-icons";
 import { ComponentType } from "react";
 
 // Custom Microsoft icon component
@@ -86,6 +87,7 @@ export const iconMap: Record<string, IconComponent> = {
   Bot,
   Music,
   GraduationCap,
+  Heart,
   Youtube: siYoutube,
   Instagram: siInstagram,
   Discord: siDiscord,

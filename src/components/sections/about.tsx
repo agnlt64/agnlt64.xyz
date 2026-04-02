@@ -1,10 +1,14 @@
 "use client"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { aboutCards } from "@/data";
+import { aboutCards as _about, iutAboutCards } from "@/data";
 import { Icon } from "@/components/ui/icon";
+import { useIutMode } from "@/hooks/iut-mode";
 
 export function AboutSection() {
+  const iutMode = useIutMode();
+  const aboutCards = iutMode ? iutAboutCards : _about;
+
   return (
     <section className="relative px-6 py-8 md:py-24" id="about">
       {/* Section divider */}
@@ -24,12 +28,13 @@ export function AboutSection() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className={`grid gap-6 ${iutMode ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
           {aboutCards.map((card, index) => (
             <Card
               key={card.id}
               id={card.id}
               className={`
+                gap-2
                 group relative overflow-hidden
                 glass
                 hover-glow
@@ -54,9 +59,6 @@ export function AboutSection() {
                 <CardTitle className="text-xl">
                   {card.title}
                 </CardTitle>
-                <CardDescription className="text-base">
-                  {card.description}
-                </CardDescription>
               </CardHeader>
               <CardContent className="relative z-10">
                 <p className="text-sm text-muted-foreground leading-relaxed">

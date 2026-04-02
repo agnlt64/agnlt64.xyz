@@ -2,13 +2,15 @@
 
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { siteConfig, navigation } from "@/data";
+import { siteConfig, navigation as _nav, iutNavigation, iutSiteConfig } from "@/data";
 import { Icon } from "@/components/ui/icon";
 import { ChevronsDown } from "lucide-react";
 import { useIutMode } from "@/hooks/iut-mode";
 
 export function HeroSection() {
   const iutMode = useIutMode();
+  const config = iutMode ? iutSiteConfig : siteConfig;
+  const navigation = iutMode ? iutNavigation : _nav;
   
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-12 overflow-hidden">
@@ -35,12 +37,12 @@ export function HeroSection() {
           {/* Main title */}
           <h1 className="mb-6 text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-balance animate-fade-in-up opacity-0 stagger-2">
             <span className="block text-white/90">Hey, I&apos;m</span>
-            <span className="gradient-text-pink animate-text-glow">{iutMode ? "Antonin GENELOT" : siteConfig.name}</span>
+            <span className="gradient-text-pink animate-text-glow">{config.name}</span>
           </h1>
 
           {/* Tagline with typewriter effect appearance */}
           <p className="text-xl md:text-2xl text-muted-foreground text-balance animate-fade-in-up opacity-0 stagger-3 max-w-2xl mx-auto">
-            {siteConfig.tagline}
+            {config.tagline}
           </p>
         </div>
 

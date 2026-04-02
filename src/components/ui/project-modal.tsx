@@ -57,7 +57,7 @@ export function ProjectModal({ project, open, onOpenChange }: ProjectModalProps)
             </div>
             <Button
               onClick={() => onOpenChange(false)}
-              className="shrink-0 w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-pink-500/10 hover:border-pink-500/30 transition-all duration-200"
+              className="shrink-0 w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-200"
               aria-label="Close"
             >
               <X className="w-4 h-4 text-muted-foreground" />

@@ -85,13 +85,13 @@ export function Header() {
           </nav>
 
           {/* Hamburger button */}
-          <button
+          <Button
             className="md:hidden flex items-center justify-center w-9 h-9 rounded-xl glass border border-white/10 hover:border-pink-500/40 text-muted-foreground hover:text-primary transition-all duration-300"
             onClick={() => setMenuOpen(o => !o)}
             aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
           >
             {menuOpen ? <X size={18} /> : <Menu size={18} />}
-          </button>
+          </Button>
         </div>
       </header>
 

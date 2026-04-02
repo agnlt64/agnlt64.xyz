@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react";
-import { socialLinks, iutSocialLink } from "@/data";
+import { socialLinks, iutSocialLinks } from "@/data";
 import { SocialButton } from "@/components/ui/social-button";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
@@ -9,7 +9,7 @@ import { useIutMode } from "@/hooks/iut-mode";
 
 export function SocialsSection() {
   const iutMode = useIutMode();
-  const links = iutMode ? [...socialLinks, iutSocialLink] : socialLinks;
+  const links = iutMode ? iutSocialLinks : socialLinks;
   const [isHovering, setIsHovering] = useState(false);
   const gridRef = useRef<HTMLDivElement>(null);
 

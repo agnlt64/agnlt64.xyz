@@ -1,12 +1,17 @@
 
 export type Config = {
-    name: string;
-    tagline: string;
+  name: string;
+  tagline: string;
 }
 
 export const siteConfig: Config = {
   name: "agnlt64",
   tagline: "Student • Software Engineer • Tech Enthusiast",
+}
+
+export const iutSiteConfig: Config = {
+  name: "Antonin GENELOT",
+  tagline: "Future software engineer"
 }
 
 export type NavItem = {
@@ -18,12 +23,15 @@ export type NavItem = {
 export const navigation: NavItem[] = [
   { name: "Programming", href: "#programming", icon: "Code" },
   { name: "Electronics", href: "#electronics", icon: "Zap" }
-]
+];
+
+export const iutNavigation: NavItem[] = [...navigation, {
+  name: 'Passions', href: '#passions', icon: "Heart"
+}];
 
 export type AboutCard = {
   id: string;
   title: string;
-  description: string;
   content: string;
   icon: string;
 }
@@ -32,18 +40,23 @@ export const aboutCards: AboutCard[] = [
   {
     id: "programming",
     title: "Software Engineering",
-    description: "Passionate about clean code, elegant solutions, and building things that matter.",
     content: "I love diving deep into complex problems and crafting efficient, maintainable solutions. Always learning new technologies and best practices.",
     icon: "Code"
   },
   {
     id: "electronics",
     title: "Electronics",
-    description: "Building and tinkering with hardware, from microcontrollers to embedded systems.",
     content: "There's something magical about bringing ideas to life through circuits and code, creating tangible solutions to real-world problems.",
     icon: "Zap"
   }
-]
+];
+
+export const iutAboutCards: AboutCard[] = [...aboutCards, {
+  id: "passions",
+  title: "Passions",
+  content: "I'm a huge fan of the game of chess, I've played competitively for two years, and a lot online. I'm also very interested in maths.",
+  icon: "Heart"
+}];
 
 export type Education = {
   degree: string;
@@ -60,6 +73,30 @@ export const education: Education = {
   description: "Focusing on software engineering, algorithms, and system design. Also working on various personal projects and contributing to open source.",
   icon: "GraduationCap"
 }
+
+export type SAE = {
+  name: string;
+  description: string;
+  link: string;
+}
+
+export const sae: SAE[] = [
+  {
+    name: "SAE 1 - How far from me?",
+    description: "A CLI GPS application in pure C. I was the leader of the team (3 students).",
+    link: "https://github.com/agnlt64/c_gps"
+  },
+  {
+    name: "SAE 2 - Bus network",
+    description: "A graphical application to manage a bus network. Made using C# and Windows Forms. I was the leader of the team (5 students).",
+    link: "https://github.com/agnlt64/orizo"
+  },
+  {
+    name: "SAE 3 - GO UPJV",
+    description: "A carpooling application for students. See more in the projects page.",
+    link: "https://github.com/agnlt64/go-upjv"
+  },
+];
 
 export type Internship = {
   company: string;
@@ -84,7 +121,7 @@ export const internships: Internship[] = [
     description: "A week-long internship providing insights into the tech industry, Microsoft culture, and hands-on experience with software development practices. During the week, I participated in a project group and presented our innovation to a panel of various people.",
     icon: "Microsoft"
   }
-]
+];
 
 export type SkillCategory = {
   title: string;
@@ -121,7 +158,7 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Operating Systems",
     icon: "Monitor",
-    skills: ["Windows", "macOS", "Mint",  "Arch Linux", "Fedora", "Ubuntu"]
+    skills: ["Windows", "macOS", "Mint", "Arch Linux", "Fedora", "Ubuntu"]
   },
   {
     title: "Hardware",
@@ -138,7 +175,7 @@ export const skillCategories: SkillCategory[] = [
     icon: "Bot",
     skills: ["OpenCode", "Claude Code", "Gemini CLI", "Github Copilot"]
   }
-]
+];
 
 export type Project = {
   title: string;
@@ -152,7 +189,7 @@ export type Project = {
 }
 
 export const projects: Project[] = [
-    {
+  {
     title: "Timecode",
     description: "A VSCode extension to keep track of how much time you spend coding.",
     content: "Includes a dashboard to visualize stats and API to store data in a SQLite database. Fully open-source, free and self-hostable.",
@@ -233,18 +270,12 @@ export const projects: Project[] = [
     private: true,
     image: "journal.png"
   },
-]
+];
 
 export type SocialLink = {
   name: string;
   icon: string;
   href: string;
-}
-
-export const iutSocialLink: SocialLink = {
-  name: "Linkedin",
-  icon: "Linkedin",
-  href: "https://www.linkedin.com/in/antonin-genelot-b735bb386/",
 }
 
 export const socialLinks: SocialLink[] = [
@@ -273,4 +304,10 @@ export const socialLinks: SocialLink[] = [
   //   icon: "Music",
   //   href: "https://dring.agnlt64.xyz"
   // }
-]
+];
+
+export const iutSocialLinks: SocialLink[] = [...socialLinks, {
+  name: "Linkedin",
+  icon: "Linkedin",
+  href: "https://www.linkedin.com/in/antonin-genelot-b735bb386/",
+}];

@@ -2,11 +2,21 @@
 
 import { useRef, useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
-import { education, internships } from "@/data";
+import { education, internships, SAE, sae } from "@/data";
 import { Icon } from "@/components/ui/icon";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, ChevronsUpDown, MapPin } from "lucide-react";
+import { useIutMode } from "@/hooks/iut-mode";
+import { Button } from "@/components/ui/button";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import Link from "next/link";
 
 export function EducationSection() {
+  const iutMode = useIutMode();
+  const [isSaeOpen, setIsSaeOpen] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -103,15 +113,39 @@ export function EducationSection() {
               </div>
             </CardHeader>
 
-            <CardContent className="relative z-10">
+            <CardContent className="relative z-10 flex flex-col gap-4">
               <p className="text-muted-foreground leading-relaxed">
                 {education.description}
               </p>
 
+              {iutMode &&
+                <Collapsible
+                  open={isSaeOpen}
+                  onOpenChange={setIsSaeOpen}
+                  className="flex flex-col gap-2"
+                >
+                  <CollapsibleTrigger asChild>
+                    <Button variant="outline" className="w-full flex justify-start">
+                      <ChevronsUpDown />
+                      Voir les SAE
+                    </Button>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="flex flex-col gap-2">
+                    {sae.map((sae: SAE, idx: number) => (
+                      <div key={idx} className="rounded-md border px-4 py-2 flex flex-col gap-2">
+                        <span>{sae.name}</span>
+                        <p className="text-muted-foreground text-sm">{sae.description}</p>
+                        <p className="text-sm mt-2">Source code is on <Link href={sae.link} className="text-primary hover:underline" target="_blank">Github</Link></p>
+                      </div>
+                    ))}
+                  </CollapsibleContent>
+                </Collapsible>
+              }
+
               {/* Decorative elements */}
-              <div className="mt-6 pt-6 border-t border-white/5">
+              <div className="pt-6 border-t border-white/5">
                 <div className="flex flex-wrap gap-2">
-                  {['Algorithms', 'System Design', 'Software Engineering', 'Open Source'].map((focus) => (
+                  {['Algorithms', 'System Design', 'Software Engineering', 'Open Source', 'Architecture'].map((focus) => (
                     <span
                       key={focus}
                       className="px-3 py-1 text-xs font-medium rounded-full bg-white/5 border border-white/10 text-muted-foreground"
