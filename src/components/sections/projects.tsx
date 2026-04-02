@@ -22,11 +22,12 @@ export function ProjectsSection() {
   };
 
   return (
-    <section className="relative px-6 py-8 md:py-24" id="projects">
+    <section className="relative px-6 py-8 md:py-18" id="projects">
       {/* Background decoration */}
       <div className="blob-pink w-80 h-80 bottom-1/4 -right-40 opacity-20" />
 
       <div className="mx-auto max-w-6xl relative z-10">
+        <div className="section-divider w-full mx-auto mb-16" />
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-primary uppercase tracking-widest mb-3 block">

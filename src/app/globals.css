@@ -559,7 +559,7 @@
 .section-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent 0%, rgba(236, 72, 153, 0.3) 50%, transparent 100%);
-  margin: 2rem 0;
+  margin: 1.5rem 0;
 }
 
 /* ============================================

@@ -6,6 +6,7 @@ import { EducationSection } from "@/components/sections/education";
 import { SkillsSection } from "@/components/sections/skills";
 import { ProjectsSection } from "@/components/sections/projects";
 import { SocialsSection } from "@/components/sections/socials";
+import { ReflectionSection } from "@/components/sections/reflection";
 
 export default async function HomePage() {
 
@@ -31,6 +32,7 @@ export default async function HomePage() {
         <AboutSection />
         <SkillsSection />
         <EducationSection />
+        <ReflectionSection />
         <ProjectsSection />
         <SocialsSection />
       </main>

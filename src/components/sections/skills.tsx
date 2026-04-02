@@ -23,7 +23,7 @@ export function SkillsSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative px-6 py-24"
+      className="relative px-6 py-18"
       id="skills"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
@@ -33,6 +33,7 @@ export function SkillsSection() {
       <div className="blob-pink w-96 h-96 top-1/4 -left-48 opacity-20" />
 
       <div className="mx-auto max-w-6xl relative z-10">
+        <div className="section-divider w-full mx-auto mb-16" />
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-primary uppercase tracking-widest mb-3 block">

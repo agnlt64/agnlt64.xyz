@@ -311,3 +311,34 @@ export const iutSocialLinks: SocialLink[] = [...socialLinks, {
   icon: "Linkedin",
   href: "https://www.linkedin.com/in/antonin-genelot-b735bb386/",
 }];
+
+export type ReflectionEntry = {
+  title: string;
+  icon: string;
+  body: string;
+  tags?: string[];
+}
+
+export const iutReflections: ReflectionEntry[] = [
+  {
+    title: "Compétences acquises",
+    icon: "GraduationCap",
+    body: "TODO: Décrivez les compétences acquises par rapport au Programme National du BUT Informatique (développement, algorithmique, réseaux, gestion de projet…).",
+    tags: ["Développement", "Algorithmique", "Réseaux", "Gestion de projet"],
+  },
+  {
+    title: "Difficultés rencontrées",
+    icon: "Zap",
+    body: "TODO: Décrivez les difficultés rencontrées au cours de votre parcours et comment vous les avez surmontées.",
+  },
+  {
+    title: "Adaptation & Autonomie",
+    icon: "Code",
+    body: "TODO: Décrivez votre capacité d'adaptation, votre autonomie, votre sens de l'innovation et du relationnel acquis au fil des expériences.",
+  },
+  {
+    title: "Analyse & Prise de recul",
+    icon: "BookOpen",
+    body: "TODO: Analysez votre parcours avec du recul — comment et pourquoi vous avez évolué, ce que vous retenez de ces deux années.",
+  },
+];

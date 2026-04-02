@@ -10,7 +10,7 @@ export function AboutSection() {
   const aboutCards = iutMode ? iutAboutCards : _about;
 
   return (
-    <section className="relative px-6 py-8 md:py-24" id="about">
+    <section className="relative px-6 py-8 md:py-18" id="about">
       {/* Section divider */}
       <div className="section-divider w-full mx-auto mb-16" />
 
