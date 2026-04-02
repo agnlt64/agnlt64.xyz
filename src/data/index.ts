@@ -201,7 +201,7 @@ export const projects: Project[] = [
   {
     title: "GoUPJV",
     description: "A carpooling app for my university.",
-    content: "A group project for my university. It allows students to find carpooling partners for their university classes. It is currently in development.",
+    content: "A group project for my university. It allows students to find carpooling partners for their university classes.",
     technologies: ["Python", "Flask", "SQLite", "HTML", "Tailwind", "JavaScript"],
     href: "https://github.com/agnlt64/go-upjv",
     featured: true,
