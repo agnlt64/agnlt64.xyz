@@ -5,8 +5,11 @@ import { Badge } from "@/components/ui/badge";
 import { siteConfig, navigation } from "@/data";
 import { Icon } from "@/components/ui/icon";
 import { ChevronsDown } from "lucide-react";
+import { useIutMode } from "@/hooks/iut-mode";
 
-export function HeroSection({ iutMode = false }: { iutMode?: boolean }) {
+export function HeroSection() {
+  const iutMode = useIutMode();
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-12 overflow-hidden">
       {/* Animated background blobs */}

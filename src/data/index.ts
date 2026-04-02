@@ -244,7 +244,7 @@ export type SocialLink = {
 export const iutSocialLink: SocialLink = {
   name: "Linkedin",
   icon: "Linkedin",
-  href: "#", // TODO
+  href: "https://www.linkedin.com/in/antonin-genelot-b735bb386/",
 }
 
 export const socialLinks: SocialLink[] = [

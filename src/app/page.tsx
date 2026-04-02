@@ -7,13 +7,7 @@ import { SkillsSection } from "@/components/sections/skills";
 import { ProjectsSection } from "@/components/sections/projects";
 import { SocialsSection } from "@/components/sections/socials";
 
-export default async function HomePage({
-  searchParams,
-}: {
-  searchParams: Promise<{ mode?: string }>;
-}) {
-  const { mode } = await searchParams;
-  const iutMode = mode === "iut";
+export default async function HomePage() {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -33,12 +27,12 @@ export default async function HomePage({
       {/* Main content */}
       <Header />
       <main>
-        <HeroSection iutMode={iutMode} />
+        <HeroSection />
         <AboutSection />
         <SkillsSection />
         <EducationSection />
         <ProjectsSection />
-        <SocialsSection iutMode={iutMode} />
+        <SocialsSection />
       </main>
       <Footer />
     </div>
