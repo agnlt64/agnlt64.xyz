@@ -312,34 +312,114 @@ export const iutSocialLinks: SocialLink[] = [...socialLinks, {
   href: "https://www.linkedin.com/in/antonin-genelot-b735bb386/",
 }];
 
-export type ReflectionEntry = {
+export type SoftSkillsEntry = {
+  widget: "soft-skills";
   title: string;
   icon: string;
   body: string;
-  tags?: string[];
-}
+  skills: Array<{ label: string; icon: string }>;
+};
+
+export type FlipCardsEntry = {
+  widget: "flip-cards";
+  title: string;
+  icon: string;
+  body: string;
+  cards: Array<{ challenge: string; lesson: string }>;
+};
+
+export type AgileRolesEntry = {
+  widget: "agile-roles";
+  title: string;
+  icon: string;
+  body: string;
+  roles: Array<{ name: string; icon: string; description: string }>;
+};
+
+export type LanguageCloudEntry = {
+  widget: "language-cloud";
+  title: string;
+  icon: string;
+  body: string;
+  languages: Array<{ name: string; paradigm: string }>;
+};
+
+export type ReflectionEntry =
+  | SoftSkillsEntry
+  | FlipCardsEntry
+  | AgileRolesEntry
+  | LanguageCloudEntry;
 
 export const iutReflections: ReflectionEntry[] = [
   {
+    widget: "soft-skills",
     title: "Compétences acquises",
     icon: "GraduationCap",
     body: "Le BUT m'a permis de développer ma capacité à travailler en équipe, notamment grâce aux SAE. Ma position de leader au sein de mes différents groupes m'a appris à déléguer les tâches en fonction des capacités de chacun. Enfin, j'ai appris à mieux communiquer sur mon travail, notamment en vulgarisant les parties techniques grâces aux soutenances orales.",
-    tags: ["Développement", "Algorithmique", "Réseaux", "Gestion de projet"],
+    skills: [
+      { label: "Leadership",        icon: "Crown"    },
+      { label: "Travail en équipe", icon: "Heart"    },
+      { label: "Communication",     icon: "BookOpen" },
+    ],
   },
   {
+    widget: "flip-cards",
     title: "Difficultés rencontrées",
     icon: "Zap",
     body: "Au début, il était difficile pour moi de travailler en équipe, étant donné que je suis autodidact. J'ai toujours eu tendance à directement me lancer dans la résolution des problèmes, sans prendre le temps de réfléchir avant. Enfin, j'ai été confronté à des technologies très anciennes et pas du tout utilisées dans le monde professionnel (PHP vanilla, Winforms), ce qui m'a demandé un certain temps d'adaptation.",
+    cards: [
+      {
+        challenge: "Autodidacte → équipe",
+        lesson: "Apprendre à faire confiance aux autres et à déléguer plutôt que tout faire seul.",
+      },
+      {
+        challenge: "Impulsivité → méthode",
+        lesson: "Prendre le temps de concevoir avant de coder évite de repartir de zéro.",
+      },
+      {
+        challenge: "Techs obsolètes",
+        lesson: "S'adapter à des contraintes inattendues est une compétence en soi.",
+      },
+    ],
   },
   {
+    widget: "agile-roles",
     title: "Adaptation & Autonomie",
     icon: "Code",
-    body: "Le BUT m'a appris la méthode agile, qui permet d'organiser son travail de manière très efficace. Les sprints réguliers permettent d'assurer la qualité du projet, tout en laissant une certaine autonomie au sein de l'équipe. J'ai pu endosser les différents rôle de la méthode agile, comme Scrum Master, Product Owner et Développeur. Cela m'a permis de comprendre en profondeur les responsabilités de chacun, ce qui m'a aidé à améliorer mes compétences de leader.",
+    body: "Le BUT m'a appris la méthode agile, qui permet d'organiser son travail de manière très efficace. Les sprints réguliers permettent d'assurer la qualité du projet, tout en laissant une certaine autonomie au sein de l'équipe. J'ai pu endosser les différents rôles de la méthode agile, ce qui m'a permis de comprendre en profondeur les responsabilités de chacun.",
+    roles: [
+      {
+        name: "Scrum Master",
+        icon: "Crown",
+        description: "Faciliter les sprints, lever les blocages et protéger l'équipe des perturbations externes.",
+      },
+      {
+        name: "Product Owner",
+        icon: "BookOpen",
+        description: "Prioriser le backlog, définir la valeur métier et être la voix du client au sein de l'équipe.",
+      },
+      {
+        name: "Développeur",
+        icon: "Code",
+        description: "Implémenter les user stories, maintenir la qualité du code et respecter la définition of done.",
+      },
+    ],
   },
   {
+    widget: "language-cloud",
     title: "Analyse & Prise de recul",
     icon: "BookOpen",
-    // Analysez votre parcours avec du recul — comment et pourquoi vous avez évolué, ce que vous retenez de ces deux années.
-    body: "Finalement, le BUT m'a permis de monter en compétences techniques, de gagner en rigueur et d'améliorer ma manière de communiquer. J'ai découvert des technologies que je n'avais jamais utilisées, et je me suis amélioré dans pleins de domaines. Je pense par exemple à la programmation système en C, en bases de données ou encore en programmation objet. J'ai travaillé avec pleins de langages différents, comme le C, C++, HTML, CSS, JS, PHP, C#, Java et même Bash. J'ai pu pratiquer divers paradigmes de programmation.",
+    body: "Finalement, le BUT m'a permis de monter en compétences techniques, de gagner en rigueur et d'améliorer ma manière de communiquer. J'ai découvert des technologies que je n'avais jamais utilisées et pratiqué divers paradigmes de programmation.",
+    languages: [
+      { name: "C",    paradigm: "Procédural"     },
+      { name: "C++",  paradigm: "Objet"          },
+      { name: "HTML", paradigm: "Markup"          },
+      { name: "CSS",  paradigm: "Styles"          },
+      { name: "JS",   paradigm: "Événementiel"    },
+      { name: "PHP",  paradigm: "Procédural / Web"},
+      { name: "C#",   paradigm: "Objet / .NET"    },
+      { name: "Java", paradigm: "Objet / JVM"     },
+      { name: "Bash", paradigm: "Scripts shell"   },
+    ],
   },
 ];
