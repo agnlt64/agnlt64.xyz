@@ -323,22 +323,23 @@ export const iutReflections: ReflectionEntry[] = [
   {
     title: "Compétences acquises",
     icon: "GraduationCap",
-    body: "TODO: Décrivez les compétences acquises par rapport au Programme National du BUT Informatique (développement, algorithmique, réseaux, gestion de projet…).",
+    body: "Le BUT m'a permis de développer ma capacité à travailler en équipe, notamment grâce aux SAE. Ma position de leader au sein de mes différents groupes m'a appris à déléguer les tâches en fonction des capacités de chacun. Enfin, j'ai appris à mieux communiquer sur mon travail, notamment en vulgarisant les parties techniques grâces aux soutenances orales.",
     tags: ["Développement", "Algorithmique", "Réseaux", "Gestion de projet"],
   },
   {
     title: "Difficultés rencontrées",
     icon: "Zap",
-    body: "TODO: Décrivez les difficultés rencontrées au cours de votre parcours et comment vous les avez surmontées.",
+    body: "Au début, il était difficile pour moi de travailler en équipe, étant donné que je suis autodidact. J'ai toujours eu tendance à directement me lancer dans la résolution des problèmes, sans prendre le temps de réfléchir avant. Enfin, j'ai été confronté à des technologies très anciennes et pas du tout utilisées dans le monde professionnel (PHP vanilla, Winforms), ce qui m'a demandé un certain temps d'adaptation.",
   },
   {
     title: "Adaptation & Autonomie",
     icon: "Code",
-    body: "TODO: Décrivez votre capacité d'adaptation, votre autonomie, votre sens de l'innovation et du relationnel acquis au fil des expériences.",
+    body: "Le BUT m'a appris la méthode agile, qui permet d'organiser son travail de manière très efficace. Les sprints réguliers permettent d'assurer la qualité du projet, tout en laissant une certaine autonomie au sein de l'équipe. J'ai pu endosser les différents rôle de la méthode agile, comme Scrum Master, Product Owner et Développeur. Cela m'a permis de comprendre en profondeur les responsabilités de chacun, ce qui m'a aidé à améliorer mes compétences de leader.",
   },
   {
     title: "Analyse & Prise de recul",
     icon: "BookOpen",
-    body: "TODO: Analysez votre parcours avec du recul — comment et pourquoi vous avez évolué, ce que vous retenez de ces deux années.",
+    // Analysez votre parcours avec du recul — comment et pourquoi vous avez évolué, ce que vous retenez de ces deux années.
+    body: "Finalement, le BUT m'a permis de monter en compétences techniques, de gagner en rigueur et d'améliorer ma manière de communiquer. J'ai découvert des technologies que je n'avais jamais utilisées, et je me suis amélioré dans pleins de domaines. Je pense par exemple à la programmation système en C, en bases de données ou encore en programmation objet. J'ai travaillé avec pleins de langages différents, comme le C, C++, HTML, CSS, JS, PHP, C#, Java et même Bash. J'ai pu pratiquer divers paradigmes de programmation.",
   },
 ];

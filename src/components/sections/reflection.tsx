@@ -43,9 +43,6 @@ export function ReflectionSection() {
               "
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Pink top accent */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent" />
-
               <CardHeader className="relative z-10 pb-3">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-lg glass-pink border border-pink-500/25 flex items-center justify-center shrink-0 group-hover:border-pink-500/50 transition-all duration-300">
