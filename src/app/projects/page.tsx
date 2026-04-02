@@ -28,8 +28,7 @@ export default function ProjectsPage() {
           `
         }}
       />
-      <div className="noise-overlay" />
-
+      
       <Suspense>
         <Header />
       </Suspense>

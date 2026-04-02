@@ -30,9 +30,6 @@ export default async function HomePage({
         }}
       />
 
-      {/* Noise texture overlay */}
-      <div className="noise-overlay" />
-
       {/* Main content */}
       <Header />
       <main>
