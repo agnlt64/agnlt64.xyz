@@ -241,7 +241,7 @@ export const projects: Project[] = [
   {
     title: "Python Search Engine",
     description: "A custom search engine that indexes a Python codebase.",
-    content: "Parses your codebase using Python's native AST module and indexes all of the functions. The results are displayed in a user-friendly web export type.",
+    content: "Parses your codebase using Python's native AST module and indexes all of the functions. The results are displayed in a user-friendly web interface.",
     technologies: ["Python", "Flask", "JavaScript"],
     href: "https://github.com/agnlt64/PPI",
     image: "ppi.png"

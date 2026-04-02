@@ -5,7 +5,8 @@ import { Menu, X, Check } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useIutMode } from "@/hooks/iut-mode";
 
 const navLinks = [
   { href: "/#about", label: "About" },
@@ -18,8 +19,7 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const iutMode = searchParams.get("mode") === "iut";
+  const iutMode = useIutMode();
 
   useEffect(() => {
     const handleScroll = () => {

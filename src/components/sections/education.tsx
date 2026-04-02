@@ -34,6 +34,7 @@ export function EducationSection() {
     <section
       ref={sectionRef}
       className="relative px-6 py-8 md:py-18"
+      id="education"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
