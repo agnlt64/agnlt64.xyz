@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "agnlt64.xyz",
-  description: "absolute coding",
+  description: "Personal Home Page of Antonin GENELOT (@agnlt64). 🇫🇷 IT student. FOSS & Linux adept. C, Go, Next, React enjoyer.",
   icons: {
     icon: '/favicon.svg'
   }
