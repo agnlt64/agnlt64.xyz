@@ -52,13 +52,15 @@ export function AboutSection() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-pink-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-full" />
 
               <CardHeader className="relative z-10">
-                {/* Icon container with glow effect */}
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-pink-500/20 to-pink-600/10 flex items-center justify-center mb-4 group-hover:glow-pink transition-all duration-300 border border-pink-500/20">
-                  <Icon name={card.icon} className="w-7 h-7 text-primary transition-transform duration-300 group-hover:scale-110" />
+                <div className="flex items-center gap-3">
+                  {/* Icon container with glow effect */}
+                  <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-pink-500/20 to-pink-600/10 flex items-center justify-center group-hover:glow-pink transition-all duration-300 border border-pink-500/20">
+                    <Icon name={card.icon} className="w-5 h-5 md:w-7 md:h-7 text-primary transition-transform duration-300 group-hover:scale-110" />
+                  </div>
+                  <CardTitle className="text-xl">
+                    {card.title}
+                  </CardTitle>
                 </div>
-                <CardTitle className="text-xl">
-                  {card.title}
-                </CardTitle>
               </CardHeader>
               <CardContent className="relative z-10">
                 <p className="text-sm text-muted-foreground leading-relaxed">

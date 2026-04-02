@@ -74,7 +74,7 @@ export function SkillsSection() {
                   <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-pink-500/20 to-pink-600/10 flex items-center justify-center border border-pink-500/20 group-hover:glow-pink transition-all duration-300">
                     <Icon name={category.icon} className="w-5 h-5 text-primary" />
                   </div>
-                  <CardTitle className="text-lg">
+                  <CardTitle className="text-xl">
                     {category.title}
                   </CardTitle>
                 </div>

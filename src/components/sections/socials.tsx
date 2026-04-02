@@ -46,7 +46,7 @@ export function SocialsSection() {
         {/* grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 */}
         <div
           ref={gridRef}
-          className={`grid gap-4 ${iutMode ? "grid-cols-4" : "grid-cols-3"}`}
+          className={`grid gap-4 ${iutMode ? "grid-cols-2 md:grid-cols-4" : "grid-cols-3"}`}
           onMouseMove={handleMouseMove}
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
