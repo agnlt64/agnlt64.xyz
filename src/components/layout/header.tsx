@@ -5,7 +5,7 @@ import { Menu, X, Check } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useIutMode } from "@/hooks/iut-mode";
 
 const navLinks = [
@@ -19,7 +19,10 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const router = useRouter();
+  const pathname = usePathname();
   const iutMode = useIutMode();
+
+  const backLink = iutMode ? pathname : `${pathname}?mode=iut`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,7 +61,7 @@ export function Header() {
               </h1>
             </Link>
             <Button variant="secondary" onClick={() => {
-              router.push(iutMode ? "/" : "/?mode=iut");
+              router.push(backLink);
             }}>
               {iutMode ? <X /> : <Check />}
               IUT Mode
@@ -70,7 +73,7 @@ export function Header() {
             {navLinks.map(({ href, label }) => (
               <Link
                 key={href}
-                href={href}
+                href={href.startsWith("/#") ? href : (iutMode ? `${href}?mode=iut` : href)}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
               >
                 {label}

@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Header } from "@/components/layout/header"
@@ -5,14 +7,11 @@ import { Footer } from "@/components/layout/footer"
 import { ProjectsGrid } from "@/components/sections/projects-grid"
 import { projects } from "@/data"
 import { Suspense } from "react"
-
-export const metadata = {
-  title: "Projects — agnlt64.xyz",
-  description: "All projects by agnlt64",
-}
+import { useIutMode } from "@/hooks/iut-mode"
 
 export default function ProjectsPage() {
-  const totalTechs = new Set(projects.flatMap(p => p.technologies)).size
+  const iutMode = useIutMode();
+  const totalTechs = new Set(projects.flatMap(p => p.technologies)).size;
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -42,7 +41,7 @@ export default function ProjectsPage() {
           <div className="mx-auto max-w-6xl relative z-10">
             {/* Back link */}
             <Link
-              href="/"
+              href={iutMode ? "/?mode=iut" : "/"}
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300 mb-12 group"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
@@ -95,5 +94,5 @@ export default function ProjectsPage() {
 
       <Footer />
     </div>
-  )
+  );
 }
