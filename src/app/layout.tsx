@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner"
 
 import "./globals.css";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,6 +20,9 @@ export const metadata: Metadata = {
   description: "Personal Home Page of Antonin GENELOT (@agnlt64). 🇫🇷 IT student. FOSS & Linux adept. C, Go, Next, React enjoyer.",
   icons: {
     icon: '/favicon.svg'
+  },
+  openGraph: {
+    images: "/opengraph-image.jpg"
   }
 };
 
@@ -32,7 +36,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Suspense>
+          {children}
+        </Suspense>
         <Toaster />
       </body>
     </html>
