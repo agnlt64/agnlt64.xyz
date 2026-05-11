@@ -8,6 +8,7 @@ import { useTranslations } from 'next-intl';
 
 export function AboutSection() {
   const t = useTranslations('about');
+  const tData = useTranslations('data.about');
   const iutMode = useIutMode();
   const aboutCards = iutMode ? iutAboutCards : _about;
 
@@ -59,13 +60,13 @@ export function AboutSection() {
                     <Icon name={card.icon} className="w-5 h-5 md:w-7 md:h-7 text-primary transition-transform duration-300 group-hover:scale-110" />
                   </div>
                   <CardTitle className="text-xl">
-                    {card.title}
+                    {tData(`${card.id}.title`)}
                   </CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="relative z-10">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  {card.content}
+                  {tData(`${card.id}.content`)}
                 </p>
               </CardContent>
             </Card>

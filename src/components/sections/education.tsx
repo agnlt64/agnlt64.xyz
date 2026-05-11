@@ -17,6 +17,9 @@ import { useTranslations } from 'next-intl';
 
 export function EducationSection() {
   const t = useTranslations('education');
+  const tEdu = useTranslations('data.education');
+  const tSae = useTranslations('data.sae');
+  const tInternships = useTranslations('data.internships');
   const iutMode = useIutMode();
   const [isSaeOpen, setIsSaeOpen] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
@@ -98,7 +101,7 @@ export function EducationSection() {
                       <Icon name={education.icon} className="w-8 h-8 text-primary" />
                     </div>
                     <span className="text-2xl mb-2 font-semibold">
-                      {education.degree}
+                      {tEdu('degree')}
                     </span>
                   </div>
 
@@ -109,7 +112,7 @@ export function EducationSection() {
                     </span>
                     <span className="flex items-center gap-2">
                       <Calendar className="w-4 h-4 text-pink-500" />
-                      {education.graduation}
+                      {tEdu('graduation')}
                     </span>
                   </CardDescription>
                 </div>
@@ -126,7 +129,7 @@ export function EducationSection() {
 
             <CardContent className="relative z-10 flex flex-col gap-4">
               <p className="text-muted-foreground leading-relaxed">
-                {education.description}
+                {tEdu('description')}
               </p>
 
               {iutMode &&
@@ -144,8 +147,8 @@ export function EducationSection() {
                   <CollapsibleContent className="flex flex-col gap-2">
                     {sae.map((sae: SAE, idx: number) => (
                       <div key={idx} className="rounded-md border px-4 py-2 flex flex-col gap-2">
-                        <span>{sae.name}</span>
-                        <p className="text-muted-foreground text-sm">{sae.description}</p>
+                        <span>{tSae(`${idx}.name`)}</span>
+                        <p className="text-muted-foreground text-sm">{tSae(`${idx}.description`)}</p>
                         <p className="text-sm mt-2">{t('sourceCode')} <Link href={sae.link} className="text-primary hover:underline" target="_blank">Github</Link></p>
                       </div>
                     ))}
@@ -227,7 +230,7 @@ export function EducationSection() {
 
                     <CardContent className="relative z-10">
                       <p className="text-muted-foreground leading-relaxed">
-                        {internship.description}
+                        {tInternships(`${index}.description`)}
                       </p>
                     </CardContent>
                   </Card>
