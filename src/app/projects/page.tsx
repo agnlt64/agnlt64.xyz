@@ -7,10 +7,8 @@ import { Footer } from "@/components/layout/footer"
 import { ProjectsGrid } from "@/components/sections/projects-grid"
 import { projects } from "@/data"
 import { Suspense } from "react"
-import { useIutMode } from "@/hooks/iut-mode"
 
 export default function ProjectsPage() {
-  const iutMode = useIutMode();
   const totalTechs = new Set(projects.flatMap(p => p.technologies)).size;
 
   return (

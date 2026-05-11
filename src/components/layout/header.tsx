@@ -1,11 +1,10 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Menu, X, Check } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { useIutMode } from "@/hooks/iut-mode";
 
 const navLinks = [
   { href: "/#about", label: "About" },
@@ -16,8 +15,6 @@ const navLinks = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const iutMode = useIutMode();
 
   useEffect(() => {
     const handleScroll = () => {
