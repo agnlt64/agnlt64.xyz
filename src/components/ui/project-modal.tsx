@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Project } from "@/data";
+import { useTranslations } from 'next-intl';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -14,6 +15,8 @@ interface ProjectModalProps {
 }
 
 export function ProjectModal({ project, open, onOpenChange }: ProjectModalProps) {
+  const t = useTranslations('ui');
+
   if (!project) return null;
 
   const isPrivate = project.private;
@@ -51,14 +54,14 @@ export function ProjectModal({ project, open, onOpenChange }: ProjectModalProps)
                   className="text-xs border-red-500/50 bg-red-500/10 text-red-400 shrink-0"
                 >
                   <Lock className="w-3 h-3 mr-1" />
-                  Private
+                  {t('private')}
                 </Badge>
               )}
             </div>
             <Button
               onClick={() => onOpenChange(false)}
               className="shrink-0 w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-200"
-              aria-label="Close"
+              aria-label={t('close')}
             >
               <X className="w-4 h-4 text-muted-foreground" />
             </Button>
@@ -96,7 +99,7 @@ export function ProjectModal({ project, open, onOpenChange }: ProjectModalProps)
                   className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg glass border border-white/10 hover:border-pink-500/40 hover:glow-pink transition-all duration-300"
                 >
                   <Github className="w-4 h-4" />
-                  View on GitHub
+                  {t('viewOnGitHub')}
                 </a>
               ) : (
                 <a
@@ -106,7 +109,7 @@ export function ProjectModal({ project, open, onOpenChange }: ProjectModalProps)
                   className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg glass border border-white/10 hover:border-pink-500/40 hover:glow-pink transition-all duration-300"
                 >
                   <ExternalLink className="w-4 h-4" />
-                  Live
+                  {t('live')}
                 </a>
               )}
             </div>

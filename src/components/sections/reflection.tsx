@@ -14,8 +14,10 @@ import {
 import { SoftSkillsWidget, FlipCardsWidget, AgileRolesWidget, LanguageCloudWidget } from "@/components/sections/reflection-widgets";
 import { useState } from "react";
 import { FileText, X } from "lucide-react";
+import { useTranslations } from 'next-intl';
 
 export function ReflectionSection() {
+  const t = useTranslations('reflection');
   const iutMode = useIutMode();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -31,17 +33,16 @@ export function ReflectionSection() {
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-primary uppercase tracking-widest mb-3 block">
-            Bilan de parcours
+            {t('label')}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Réflexion &amp; <span className="gradient-text-pink">Acquis</span>
+            {t('title')} <span className="gradient-text-pink">{t('titleHighlight')}</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Compétences développées, difficultés surmontées et prise de recul sur deux années de BUT Informatique.
+            {t('description')}
           </p>
         </div>
 
-        {/* Reflection cards — 1 par ligne */}
         <div className="flex flex-col gap-6 max-w-2xl mx-auto">
           {iutReflections.map((entry, index) => (
             <Card
@@ -69,10 +70,10 @@ export function ReflectionSection() {
                   <button
                     onClick={() => setOpenIndex(index)}
                     className="hover:cursor-pointer flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-muted-foreground border border-white/10 hover:border-pink-500/30 hover:text-pink-300 glass transition-all duration-300 shrink-0"
-                    aria-label="Voir les détails"
+                    aria-label={t('viewDetails')}
                   >
                     <FileText className="w-3.5 h-3.5" />
-                    Détails
+                    {t('details')}
                   </button>
                 </div>
               </CardHeader>

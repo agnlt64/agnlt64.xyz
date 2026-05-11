@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Icon } from "@/components/ui/icon";
+import { useTranslations } from 'next-intl';
 import type {
   SoftSkillsEntry,
   FlipCardsEntry,
@@ -65,6 +66,8 @@ function FlipCard({
 }
 
 export function FlipCardsWidget({ entry }: { entry: FlipCardsEntry }) {
+  const t = useTranslations('reflection');
+
   return (
     <div>
       <div className="grid grid-cols-3 gap-3 mt-2">
@@ -73,7 +76,7 @@ export function FlipCardsWidget({ entry }: { entry: FlipCardsEntry }) {
         ))}
       </div>
       <p className="text-center text-xs text-muted-foreground/40 mt-2">
-        Cliquez pour révéler
+        {t('clickToReveal')}
       </p>
     </div>
   );

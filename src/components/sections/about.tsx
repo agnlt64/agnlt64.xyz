@@ -1,11 +1,13 @@
 "use client"
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { aboutCards as _about, iutAboutCards } from "@/data";
 import { Icon } from "@/components/ui/icon";
 import { useIutMode } from "@/hooks/iut-mode";
+import { useTranslations } from 'next-intl';
 
 export function AboutSection() {
+  const t = useTranslations('about');
   const iutMode = useIutMode();
   const aboutCards = iutMode ? iutAboutCards : _about;
 
@@ -18,13 +20,13 @@ export function AboutSection() {
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-primary uppercase tracking-widest mb-3 block">
-            Get to know me
+            {t('label')}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            About <span className="gradient-text-pink">Me</span>
+            {t('title')} <span className="gradient-text-pink">{t('titleHighlight')}</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            I&apos;m passionate about creating elegant solutions and exploring diverse interests
+            {t('description')}
           </p>
         </div>
 
@@ -53,7 +55,6 @@ export function AboutSection() {
 
               <CardHeader className="relative z-10">
                 <div className="flex items-center gap-3">
-                  {/* Icon container with glow effect */}
                   <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-pink-500/20 to-pink-600/10 flex items-center justify-center group-hover:glow-pink transition-all duration-300 border border-pink-500/20">
                     <Icon name={card.icon} className="w-5 h-5 md:w-7 md:h-7 text-primary transition-transform duration-300 group-hover:scale-110" />
                   </div>

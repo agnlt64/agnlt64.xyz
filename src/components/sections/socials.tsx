@@ -6,8 +6,10 @@ import { SocialButton } from "@/components/ui/social-button";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { useIutMode } from "@/hooks/iut-mode";
+import { useTranslations } from 'next-intl';
 
 export function SocialsSection() {
+  const t = useTranslations('socials');
   const iutMode = useIutMode();
   const links = iutMode ? iutSocialLinks : socialLinks;
   const [isHovering, setIsHovering] = useState(false);
@@ -32,18 +34,16 @@ export function SocialsSection() {
         {/* Section header */}
         <div className="mb-12">
           <span className="text-sm font-medium text-primary uppercase tracking-widest mb-3 block">
-            Let&apos;s connect
+            {t('label')}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Find me <span className="gradient-text-pink">online</span>
+            {t('title')} <span className="gradient-text-pink">{t('titleHighlight')}</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Feel free to reach out for collaborations, questions, or just to say hello
+            {t('description')}
           </p>
         </div>
 
-        {/* Social buttons grid */}
-        {/* grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 */}
         <div
           ref={gridRef}
           className={`grid gap-4 ${iutMode ? "grid-cols-2 md:grid-cols-4" : "grid-cols-3"}`}
@@ -70,10 +70,10 @@ export function SocialsSection() {
           className="mt-2"
           onClick={() => {
             navigator.clipboard.writeText("genelot.antonin@gmail.com");
-            toast.success("Email address copied to clipboard!");
+            toast.success(t('emailCopied'));
           }}
         >
-          Prefer email?
+          {t('preferEmail')}
         </Button>
       </div>
     </section>

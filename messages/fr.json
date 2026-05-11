@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact",
+    "closeMenu": "Fermer le menu",
+    "openMenu": "Ouvrir le menu",
+    "mobileNav": "Navigation mobile"
+  },
+  "hero": {
+    "greeting": "Hey, je suis",
+    "scroll": "Défiler"
+  },
+  "about": {
+    "label": "Apprenez à me connaître",
+    "title": "À propos de",
+    "titleHighlight": "moi",
+    "description": "Je suis passionné par la création de solutions élégantes et l'exploration d'intérêts variés"
+  },
+  "education": {
+    "label": "Parcours académique",
+    "title": "Formation",
+    "inProgress": "En cours",
+    "viewSae": "Voir les SAE",
+    "sourceCode": "Le code source est sur",
+    "internships": "Stages",
+    "tags": {
+      "algorithms": "Algorithmes",
+      "systemDesign": "Architecture système",
+      "softwareEngineering": "Génie logiciel",
+      "openSource": "Open Source",
+      "architecture": "Architecture"
+    }
+  },
+  "skills": {
+    "label": "Expertise technique",
+    "title": "Compétences &",
+    "titleHighlight": "Technologies",
+    "description": "Un ensemble de technologies et d'outils avec lesquels je travaille pour donner vie aux idées"
+  },
+  "projects": {
+    "label": "Mon travail",
+    "featuredTitle": "Projets",
+    "featuredTitleHighlight": "phares",
+    "featuredDescription": "Une sélection de projets sur lesquels j'ai travaillé, des outils aux expériences créatives",
+    "viewAll": "Voir les {count} projets",
+    "page": {
+      "backToHome": "Retour à l'accueil",
+      "label": "Mon travail",
+      "title": "Tous les",
+      "titleHighlight": "Projets",
+      "badge": "{count} projets",
+      "description": "Tout ce que j'ai construit — des outils et expériences aux projets d'équipe et projets personnels.",
+      "stats": {
+        "totalProjects": "Projets au total",
+        "technologies": "Technologies",
+        "openSource": "Open source"
+      }
+    }
+  },
+  "socials": {
+    "label": "Restons en contact",
+    "title": "Retrouvez-moi",
+    "titleHighlight": "en ligne",
+    "description": "N'hésitez pas à me contacter pour des collaborations, des questions ou juste pour dire bonjour",
+    "preferEmail": "Préférez l'email ?",
+    "emailCopied": "Adresse email copiée dans le presse-papiers !"
+  },
+  "reflection": {
+    "label": "Bilan de parcours",
+    "title": "Réflexion &",
+    "titleHighlight": "Acquis",
+    "description": "Compétences développées, difficultés surmontées et prise de recul sur deux années de BUT Informatique.",
+    "viewDetails": "Voir les détails",
+    "details": "Détails",
+    "clickToReveal": "Cliquez pour révéler"
+  },
+  "footer": {
+    "builtWith": "Fait avec",
+    "copyright": "© {year} agnlt64. Tous droits réservés."
+  },
+  "ui": {
+    "private": "Privé",
+    "close": "Fermer",
+    "viewOnGitHub": "Voir sur GitHub",
+    "live": "Démo"
+  },
+  "data": {
+    "site": {
+      "tagline": "Étudiant • Ingénieur logiciel • Passionné de tech",
+      "iutTagline": "Futur ingénieur logiciel"
+    }
+  }
+}

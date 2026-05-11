@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { ExternalLink, Lock, Github, Maximize2 } from "lucide-react";
 import { Project } from "@/data";
+import { useTranslations } from 'next-intl';
 
 interface ProjectCardProps extends Project {
   onClick?: () => void;
@@ -13,6 +13,7 @@ interface ProjectCardProps extends Project {
 }
 
 export function ProjectCard(props: ProjectCardProps) {
+  const t = useTranslations('ui');
   const { title, description, content, technologies, href, onClick, isHovering = false } = props;
   const isPrivate = props.private;
   const isExpandable = !!onClick;
@@ -51,7 +52,7 @@ export function ProjectCard(props: ProjectCardProps) {
                   className="text-xs border-red-500/50 bg-red-500/10 text-red-400 shrink-0"
                 >
                   <Lock className="w-3 h-3 mr-1" />
-                  Private
+                  {t('private')}
                 </Badge>
               )}
             </div>

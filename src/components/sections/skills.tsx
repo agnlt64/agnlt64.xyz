@@ -4,8 +4,10 @@ import { useRef, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { skillCategories } from "@/data";
 import { Icon } from "@/components/ui/icon";
+import { useTranslations } from 'next-intl';
 
 export function SkillsSection() {
+  const t = useTranslations('skills');
   const sectionRef = useRef<HTMLElement>(null);
   const [isHovering, setIsHovering] = useState(false);
 
@@ -37,13 +39,13 @@ export function SkillsSection() {
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-primary uppercase tracking-widest mb-3 block">
-            Technical expertise
+            {t('label')}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Skills & <span className="gradient-text-pink">Technologies</span>
+            {t('title')} <span className="gradient-text-pink">{t('titleHighlight')}</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A collection of technologies and tools I work with to bring ideas to life
+            {t('description')}
           </p>
         </div>
 
@@ -61,7 +63,7 @@ export function SkillsSection() {
                 stagger-${Math.min(categoryIndex + 1, 8)}
               `}
             >
-              {/* Cursor spotlight — radial gradient centered at cursor position relative to this card */}
+              {/* Cursor spotlight */}
               <div
                 className={`absolute inset-0 pointer-events-none transition-opacity duration-500 ${isHovering ? "opacity-100" : "opacity-0"}`}
                 style={{

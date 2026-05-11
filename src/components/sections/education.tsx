@@ -13,12 +13,22 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import Link from "next/link";
+import { useTranslations } from 'next-intl';
 
 export function EducationSection() {
+  const t = useTranslations('education');
   const iutMode = useIutMode();
   const [isSaeOpen, setIsSaeOpen] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+
+  const focusTags = [
+    t('tags.algorithms'),
+    t('tags.systemDesign'),
+    t('tags.softwareEngineering'),
+    t('tags.openSource'),
+    t('tags.architecture'),
+  ];
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     const cards = sectionRef.current?.querySelectorAll<HTMLElement>(".education-card");
@@ -46,10 +56,10 @@ export function EducationSection() {
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-primary uppercase tracking-widest mb-3 block">
-            Academic background
+            {t('label')}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Education
+            {t('title')}
           </h2>
         </div>
 
@@ -108,7 +118,7 @@ export function EducationSection() {
                 <div className="shrink-0">
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-pink-500/10 text-pink-400 border border-pink-500/20">
                     <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse mr-2" />
-                    In Progress
+                    {t('inProgress')}
                   </span>
                 </div>
               </div>
@@ -128,7 +138,7 @@ export function EducationSection() {
                   <CollapsibleTrigger asChild>
                     <Button variant="outline" className="w-full flex justify-start">
                       <ChevronsUpDown />
-                      Voir les SAE
+                      {t('viewSae')}
                     </Button>
                   </CollapsibleTrigger>
                   <CollapsibleContent className="flex flex-col gap-2">
@@ -136,22 +146,22 @@ export function EducationSection() {
                       <div key={idx} className="rounded-md border px-4 py-2 flex flex-col gap-2">
                         <span>{sae.name}</span>
                         <p className="text-muted-foreground text-sm">{sae.description}</p>
-                        <p className="text-sm mt-2">Source code is on <Link href={sae.link} className="text-primary hover:underline" target="_blank">Github</Link></p>
+                        <p className="text-sm mt-2">{t('sourceCode')} <Link href={sae.link} className="text-primary hover:underline" target="_blank">Github</Link></p>
                       </div>
                     ))}
                   </CollapsibleContent>
                 </Collapsible>
               }
 
-              {/* Decorative elements */}
+              {/* Focus tags */}
               <div className="pt-6 border-t border-white/5">
                 <div className="flex flex-wrap gap-2">
-                  {['Algorithms', 'System Design', 'Software Engineering', 'Open Source', 'Architecture'].map((focus) => (
+                  {focusTags.map((label) => (
                     <span
-                      key={focus}
+                      key={label}
                       className="px-3 py-1 text-xs font-medium rounded-full bg-white/5 border border-white/10 text-muted-foreground"
                     >
-                      {focus}
+                      {label}
                     </span>
                   ))}
                 </div>
@@ -162,7 +172,7 @@ export function EducationSection() {
           {/* Internships Section */}
           {internships.length > 0 && (
             <div className="mt-12">
-              <h3 className="text-2xl font-bold mb-6 ml-0 md:ml-16">Internships</h3>
+              <h3 className="text-2xl font-bold mb-6 ml-0 md:ml-16">{t('internships')}</h3>
 
               <div className="space-y-6">
                 {internships.map((internship, index) => (

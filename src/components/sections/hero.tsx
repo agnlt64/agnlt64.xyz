@@ -6,12 +6,15 @@ import { siteConfig, navigation as _nav, iutNavigation, iutSiteConfig } from "@/
 import { Icon } from "@/components/ui/icon";
 import { ChevronsDown } from "lucide-react";
 import { useIutMode } from "@/hooks/iut-mode";
+import { useTranslations } from 'next-intl';
 
 export function HeroSection() {
+  const t = useTranslations();
   const iutMode = useIutMode();
   const config = iutMode ? iutSiteConfig : siteConfig;
   const navigation = iutMode ? iutNavigation : _nav;
-  
+  const tagline = iutMode ? t('data.site.iutTagline') : t('data.site.tagline');
+
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-12 overflow-hidden">
       {/* Animated background blobs */}
@@ -36,13 +39,13 @@ export function HeroSection() {
         <div className="mb-10 text-center">
           {/* Main title */}
           <h1 className="mb-6 text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-balance animate-fade-in-up opacity-0 stagger-2">
-            <span className="block text-white/90">Hey, I&apos;m</span>
+            <span className="block text-white/90">{t('hero.greeting')}</span>
             <span className="gradient-text-pink animate-text-glow">{config.name}</span>
           </h1>
 
-          {/* Tagline with typewriter effect appearance */}
+          {/* Tagline */}
           <p className="text-xl md:text-2xl text-muted-foreground text-balance animate-fade-in-up opacity-0 stagger-3 max-w-2xl mx-auto">
-            {config.tagline}
+            {tagline}
           </p>
         </div>
 
@@ -68,13 +71,13 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator - positioned at bottom of section */}
+      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-fade-in opacity-0 stagger-5">
         <Link
           href="#about"
           className="flex flex-col items-center gap-2 text-muted-foreground"
         >
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
+          <span className="text-xs uppercase tracking-widest">{t('hero.scroll')}</span>
           <ChevronsDown className="w-5 h-5 animate-float" />
         </Link>
       </div>

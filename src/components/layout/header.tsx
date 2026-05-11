@@ -5,16 +5,18 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-
-const navLinks = [
-  { href: "/#about", label: "About" },
-  { href: "/#skills", label: "Skills" },
-  { href: "/projects", label: "Projects" },
-];
+import { useTranslations } from 'next-intl';
 
 export function Header() {
+  const t = useTranslations('nav');
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: "/#about", label: t('about') },
+    { href: "/#skills", label: t('skills') },
+    { href: "/projects", label: t('projects') },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +27,6 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
@@ -69,7 +70,7 @@ export function Header() {
               href="/#socials"
               className="px-4 py-2 text-sm font-medium rounded-full glass border border-pink-500/30 hover:border-pink-500/60 hover:glow-pink transition-all duration-300"
             >
-              Contact
+              {t('contact')}
             </Link>
           </nav>
 
@@ -77,7 +78,7 @@ export function Header() {
           <Button
             className="md:hidden flex items-center justify-center w-9 h-9 rounded-xl glass border border-white/10 hover:border-pink-500/40 text-muted-foreground hover:text-primary transition-all duration-300"
             onClick={() => setMenuOpen(o => !o)}
-            aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-label={menuOpen ? t('closeMenu') : t('openMenu')}
           >
             {menuOpen ? <X size={18} /> : <Menu size={18} />}
           </Button>
@@ -104,7 +105,7 @@ export function Header() {
           "transition-transform duration-300 ease-in-out",
           menuOpen ? "translate-x-0" : "translate-x-full"
         )}
-        aria-label="Navigation mobile"
+        aria-label={t('mobileNav')}
       >
         {/* Pink accent line */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent" />
@@ -137,7 +138,7 @@ export function Header() {
           )}
           style={{ animationDelay: menuOpen ? "260ms" : "0ms", animationFillMode: "both" }}
         >
-          Contact
+          {t('contact')}
         </Link>
       </nav>
     </>
