@@ -1,9 +1,6 @@
-
-import { useSearchParams } from "next/navigation";
+import { env } from '@/lib/env';
 
 export function useIutMode(): boolean {
-  const searchParams = useSearchParams();
-  const mode = searchParams.get('mode');
-
-  return mode === "iut";
+  const enabled = env.NEXT_PUBLIC_IUT_MODE;
+  return enabled;
 }

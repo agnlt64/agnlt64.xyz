@@ -1,11 +1,10 @@
-"use client"
+"use client";
 
 import { cn } from "@/lib/utils";
 import { Menu, X, Check } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { useRouter, usePathname } from "next/navigation";
 import { useIutMode } from "@/hooks/iut-mode";
 
 const navLinks = [
@@ -18,11 +17,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const router = useRouter();
-  const pathname = usePathname();
   const iutMode = useIutMode();
-
-  const backLink = iutMode ? pathname : `${pathname}?mode=iut`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,12 +55,6 @@ export function Header() {
                 <span className="text-pink-500">.xyz</span>
               </h1>
             </Link>
-            <Button variant="secondary" onClick={() => {
-              router.push(backLink);
-            }}>
-              {iutMode ? <X /> : <Check />}
-              IUT Mode
-            </Button>
           </div>
 
           {/* Desktop nav */}
@@ -73,7 +62,7 @@ export function Header() {
             {navLinks.map(({ href, label }) => (
               <Link
                 key={href}
-                href={href.startsWith("/#") ? href : (iutMode ? `${href}?mode=iut` : href)}
+                href={href}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
               >
                 {label}

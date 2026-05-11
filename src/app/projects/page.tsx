@@ -41,7 +41,7 @@ export default function ProjectsPage() {
           <div className="mx-auto max-w-6xl relative z-10">
             {/* Back link */}
             <Link
-              href={iutMode ? "/?mode=iut" : "/"}
+              href="/"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300 mb-12 group"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
