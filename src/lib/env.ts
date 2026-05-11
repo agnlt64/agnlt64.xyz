@@ -6,6 +6,6 @@ export const env = createEnv({
         NEXT_PUBLIC_IUT_MODE: z.coerce.boolean(),
     },
     runtimeEnv: {
-        NEXT_PUBLIC_IUT_MODE: process.env.IUT_MODE,
+        NEXT_PUBLIC_IUT_MODE: process.env.NEXT_PUBLIC_IUT_MODE,
     }
 });
