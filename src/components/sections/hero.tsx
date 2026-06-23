@@ -1,20 +1,11 @@
-"use client"
-
-import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { siteConfig, navigation as _nav, iutNavigation, iutSiteConfig } from "@/data";
+import { siteConfig, navigation } from "@/data";
 import { Icon } from "@/components/ui/icon";
 import { ChevronsDown } from "lucide-react";
-import { useIutMode } from "@/hooks/iut-mode";
-import { useTranslations } from 'next-intl';
+
+import { Link } from "@tanstack/react-router";
 
 export function HeroSection() {
-  const t = useTranslations();
-  const iutMode = useIutMode();
-  const config = iutMode ? iutSiteConfig : siteConfig;
-  const navigation = iutMode ? iutNavigation : _nav;
-  const tagline = iutMode ? t('data.site.iutTagline') : t('data.site.tagline');
-
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-12 overflow-hidden">
       {/* Animated background blobs */}
@@ -39,20 +30,20 @@ export function HeroSection() {
         <div className="mb-10 text-center">
           {/* Main title */}
           <h1 className="mb-6 text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-balance animate-fade-in-up opacity-0 stagger-2">
-            <span className="block text-white/90">{t('hero.greeting')}</span>
-            <span className="gradient-text-pink animate-text-glow">{config.name}</span>
+            <span className="block text-white/90">Hey, I&apos;m</span>
+            <span className="gradient-text-pink animate-text-glow">{siteConfig.name}</span>
           </h1>
 
           {/* Tagline */}
           <p className="text-xl md:text-2xl text-muted-foreground text-balance animate-fade-in-up opacity-0 stagger-3 max-w-2xl mx-auto">
-            {tagline}
+            {siteConfig.tagline}
           </p>
         </div>
 
         {/* Navigation badges */}
         <div className="flex flex-wrap justify-center gap-3 animate-fade-in-up opacity-0 stagger-4">
           {navigation.map((item, index) => (
-            <Link key={item.name} href={item.href} className="inline-block group">
+            <Link key={item.name} to={item.href} className="inline-block group">
               <Badge
                 variant="secondary"
                 className={`
@@ -73,13 +64,13 @@ export function HeroSection() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-fade-in opacity-0 stagger-5">
-        <Link
+        <a
           href="#about"
           className="flex flex-col items-center gap-2 text-muted-foreground"
         >
-          <span className="text-xs uppercase tracking-widest">{t('hero.scroll')}</span>
+          <span className="text-xs uppercase tracking-widest">Scroll down</span>
           <ChevronsDown className="w-5 h-5 animate-float" />
-        </Link>
+        </a>
       </div>
     </section>
   );

@@ -1,5 +1,3 @@
-"use client"
-
 import { useRef, useState } from "react";
 import { ProjectCard } from "@/components/ui/project-card";
 import { ProjectModal } from "@/components/ui/project-modal";

@@ -6,9 +6,14 @@ import { EducationSection } from "@/components/sections/education";
 import { SkillsSection } from "@/components/sections/skills";
 import { ProjectsSection } from "@/components/sections/projects";
 import { SocialsSection } from "@/components/sections/socials";
-import { ReflectionSection } from "@/components/sections/reflection";
 
-export default async function HomePage() {
+import { createFileRoute } from "@tanstack/react-router";
+
+export const Route = createFileRoute('/')({
+  component: HomePage,
+});
+
+function HomePage() {
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -32,7 +37,6 @@ export default async function HomePage() {
         <AboutSection />
         <SkillsSection />
         <EducationSection />
-        <ReflectionSection />
         <ProjectsSection />
         <SocialsSection />
       </main>

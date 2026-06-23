@@ -1,36 +1,19 @@
-"use client"
-
 import { useRef, useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
-import { education, internships, SAE, sae } from "@/data";
+import { education, internships } from "@/data";
 import { Icon } from "@/components/ui/icon";
-import { Calendar, ChevronsUpDown, MapPin } from "lucide-react";
-import { useIutMode } from "@/hooks/iut-mode";
-import { Button } from "@/components/ui/button";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-import Link from "next/link";
-import { useTranslations } from 'next-intl';
+import { Calendar, MapPin } from "lucide-react";
 
 export function EducationSection() {
-  const t = useTranslations('education');
-  const tEdu = useTranslations('data.education');
-  const tSae = useTranslations('data.sae');
-  const tInternships = useTranslations('data.internships');
-  const iutMode = useIutMode();
-  const [isSaeOpen, setIsSaeOpen] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   const focusTags = [
-    t('tags.algorithms'),
-    t('tags.systemDesign'),
-    t('tags.softwareEngineering'),
-    t('tags.openSource'),
-    t('tags.architecture'),
+    "Algorithms",
+    "System design",
+    "Software engineering",
+    "Open source",
+    "Architecture",
   ];
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
@@ -59,10 +42,10 @@ export function EducationSection() {
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-primary uppercase tracking-widest mb-3 block">
-            {t('label')}
+            Academic background
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            {t('title')}
+            Education
           </h2>
         </div>
 
@@ -101,7 +84,7 @@ export function EducationSection() {
                       <Icon name={education.icon} className="w-8 h-8 text-primary" />
                     </div>
                     <span className="text-2xl mb-2 font-semibold">
-                      {tEdu('degree')}
+                      BUT Informatique
                     </span>
                   </div>
 
@@ -112,7 +95,7 @@ export function EducationSection() {
                     </span>
                     <span className="flex items-center gap-2">
                       <Calendar className="w-4 h-4 text-pink-500" />
-                      {tEdu('graduation')}
+                      {education.graduation}
                     </span>
                   </CardDescription>
                 </div>
@@ -121,7 +104,7 @@ export function EducationSection() {
                 <div className="shrink-0">
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-pink-500/10 text-pink-400 border border-pink-500/20">
                     <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse mr-2" />
-                    {t('inProgress')}
+                    In progress
                   </span>
                 </div>
               </div>
@@ -129,32 +112,8 @@ export function EducationSection() {
 
             <CardContent className="relative z-10 flex flex-col gap-4">
               <p className="text-muted-foreground leading-relaxed">
-                {tEdu('description')}
+                {education.description}
               </p>
-
-              {iutMode &&
-                <Collapsible
-                  open={isSaeOpen}
-                  onOpenChange={setIsSaeOpen}
-                  className="flex flex-col gap-2"
-                >
-                  <CollapsibleTrigger asChild>
-                    <Button variant="outline" className="w-full flex justify-start">
-                      <ChevronsUpDown />
-                      {t('viewSae')}
-                    </Button>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent className="flex flex-col gap-2">
-                    {sae.map((sae: SAE, idx: number) => (
-                      <div key={idx} className="rounded-md border px-4 py-2 flex flex-col gap-2">
-                        <span>{tSae(`${idx}.name`)}</span>
-                        <p className="text-muted-foreground text-sm">{tSae(`${idx}.description`)}</p>
-                        <p className="text-sm mt-2">{t('sourceCode')} <Link href={sae.link} className="text-primary hover:underline" target="_blank">Github</Link></p>
-                      </div>
-                    ))}
-                  </CollapsibleContent>
-                </Collapsible>
-              }
 
               {/* Focus tags */}
               <div className="pt-6 border-t border-white/5">
@@ -175,7 +134,7 @@ export function EducationSection() {
           {/* Internships Section */}
           {internships.length > 0 && (
             <div className="mt-12">
-              <h3 className="text-2xl font-bold mb-6 ml-0 md:ml-16">{t('internships')}</h3>
+              <h3 className="text-2xl font-bold mb-6 ml-0 md:ml-16">Internships</h3>
 
               <div className="space-y-6">
                 {internships.map((internship, index) => (
@@ -230,7 +189,7 @@ export function EducationSection() {
 
                     <CardContent className="relative z-10">
                       <p className="text-muted-foreground leading-relaxed">
-                        {tInternships(`${index}.description`)}
+                        {internship.description}
                       </p>
                     </CardContent>
                   </Card>

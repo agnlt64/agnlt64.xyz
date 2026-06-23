@@ -1,21 +1,18 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { useTranslations } from 'next-intl';
+
+import { Link } from "@tanstack/react-router";
 
 export function Header() {
-  const t = useTranslations('nav');
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "/#about", label: t('about') },
-    { href: "/#skills", label: t('skills') },
-    { href: "/projects", label: t('projects') },
+    { to: "/#about", label: "About" },
+    { to: "/#skills", label: "Skills" },
+    { to: "/projects", label: "Projects" },
   ];
 
   useEffect(() => {
@@ -47,7 +44,7 @@ export function Header() {
       >
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex gap-4 items-center">
-            <Link href="/" className="group" onClick={closeMenu}>
+            <Link to="/" className="group" onClick={closeMenu}>
               <h1 className="text-2xl font-bold">
                 <span className="text-white">agnlt64</span>
                 <span className="text-pink-500">.xyz</span>
@@ -57,28 +54,28 @@ export function Header() {
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-6">
-            {navLinks.map(({ href, label }) => (
+            {navLinks.map(({ to, label }) => (
               <Link
-                key={href}
-                href={href}
+                key={to}
+                to={to}
                 className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
               >
                 {label}
               </Link>
             ))}
-            <Link
-              href="/#socials"
+            <a
+              href="#socials"
               className="px-4 py-2 text-sm font-medium rounded-full glass border border-pink-500/30 hover:border-pink-500/60 hover:glow-pink transition-all duration-300"
             >
-              {t('contact')}
-            </Link>
+              Contact
+            </a>
           </nav>
 
           {/* Hamburger button */}
           <Button
             className="md:hidden flex items-center justify-center w-9 h-9 rounded-xl glass border border-white/10 hover:border-pink-500/40 text-muted-foreground hover:text-primary transition-all duration-300"
             onClick={() => setMenuOpen(o => !o)}
-            aria-label={menuOpen ? t('closeMenu') : t('openMenu')}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
           >
             {menuOpen ? <X size={18} /> : <Menu size={18} />}
           </Button>
@@ -105,15 +102,15 @@ export function Header() {
           "transition-transform duration-300 ease-in-out",
           menuOpen ? "translate-x-0" : "translate-x-full"
         )}
-        aria-label={t('mobileNav')}
+        aria-label="Mobile navigation"
       >
         {/* Pink accent line */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent" />
 
-        {navLinks.map(({ href, label }, i) => (
+        {navLinks.map(({ to, label }, i) => (
           <Link
-            key={href}
-            href={href}
+            key={to}
+            to={to}
             onClick={closeMenu}
             className={cn(
               "text-base font-medium text-muted-foreground hover:text-primary",
@@ -127,8 +124,8 @@ export function Header() {
           </Link>
         ))}
 
-        <Link
-          href="/#socials"
+        <a
+          href="#socials"
           onClick={closeMenu}
           className={cn(
             "mt-4 px-4 py-2.5 text-sm font-medium text-center rounded-full",
@@ -138,8 +135,8 @@ export function Header() {
           )}
           style={{ animationDelay: menuOpen ? "260ms" : "0ms", animationFillMode: "both" }}
         >
-          {t('contact')}
-        </Link>
+          Contact
+        </a>
       </nav>
     </>
   );

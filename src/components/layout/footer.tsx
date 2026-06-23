@@ -1,10 +1,6 @@
-"use client"
-
 import { Heart } from "lucide-react";
-import { useTranslations } from 'next-intl';
 
 export function Footer() {
-  const t = useTranslations('footer');
   const currentYear = new Date().getFullYear();
 
   return (
@@ -24,14 +20,14 @@ export function Footer() {
 
           {/* Center content */}
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span>{t('builtWith')}</span>
+            <span>Built with</span>
             <Heart className="w-4 h-4 text-pink-500 animate-pulse" />
           </div>
 
           {/* Copyright */}
           <div className="text-center md:text-right">
             <p className="text-sm text-muted-foreground">
-              {t('copyright', { year: currentYear })}
+              © {currentYear} agnlt64. All rights reserved.
             </p>
           </div>
         </div>
