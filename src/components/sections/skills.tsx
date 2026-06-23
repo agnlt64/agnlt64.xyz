@@ -1,13 +1,9 @@
-"use client"
-
 import { useRef, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { skillCategories } from "@/data";
 import { Icon } from "@/components/ui/icon";
-import { useTranslations } from 'next-intl';
 
 export function SkillsSection() {
-  const t = useTranslations('skills');
   const sectionRef = useRef<HTMLElement>(null);
   const [isHovering, setIsHovering] = useState(false);
 
@@ -39,13 +35,13 @@ export function SkillsSection() {
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-primary uppercase tracking-widest mb-3 block">
-            {t('label')}
+            Technical expertise
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            {t('title')} <span className="gradient-text-pink">{t('titleHighlight')}</span>
+            Skills & <span className="gradient-text-pink">Technologies</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            {t('description')}
+            A collection of technologies and tools I work with to bring ideas to life
           </p>
         </div>
 

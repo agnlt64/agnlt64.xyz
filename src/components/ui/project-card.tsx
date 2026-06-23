@@ -1,11 +1,9 @@
-"use client"
-
-import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Lock, Github, Maximize2 } from "lucide-react";
 import { Project } from "@/data";
-import { useTranslations } from 'next-intl';
+
+import { Link } from "@tanstack/react-router";
 
 interface ProjectCardProps extends Project {
   onClick?: () => void;
@@ -13,7 +11,6 @@ interface ProjectCardProps extends Project {
 }
 
 export function ProjectCard(props: ProjectCardProps) {
-  const t = useTranslations('ui');
   const { title, description, content, technologies, href, onClick, isHovering = false } = props;
   const isPrivate = props.private;
   const isExpandable = !!onClick;
@@ -37,7 +34,7 @@ export function ProjectCard(props: ProjectCardProps) {
       />
 
       {/* Top accent line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-pink-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
       <CardHeader className="relative z-10">
         <div className="flex items-start justify-between gap-4">
@@ -52,7 +49,7 @@ export function ProjectCard(props: ProjectCardProps) {
                   className="text-xs border-red-500/50 bg-red-500/10 text-red-400 shrink-0"
                 >
                   <Lock className="w-3 h-3 mr-1" />
-                  {t('private')}
+                  Private
                 </Badge>
               )}
             </div>
@@ -119,7 +116,7 @@ export function ProjectCard(props: ProjectCardProps) {
 
   return (
     href ?
-      <Link href={href} target="_blank" className="block h-full">
+      <Link to={href} target="_blank" className="block h-full">
         {cardInner}
       </Link>
       : <div className="block h-full">

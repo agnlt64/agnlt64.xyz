@@ -1,16 +1,16 @@
-"use client"
-
-import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { ProjectsGrid } from "@/components/sections/projects-grid"
 import { projects } from "@/data"
-import { Suspense } from "react"
-import { useTranslations } from 'next-intl'
 
-export default function ProjectsPage() {
-  const t = useTranslations('projects');
+import { createFileRoute, Link } from "@tanstack/react-router";
+
+export const Route = createFileRoute('/projects')({
+  component: ProjectsPage
+});
+
+function ProjectsPage() {
   const totalTechs = new Set(projects.flatMap(p => p.technologies)).size;
 
   return (
@@ -28,9 +28,7 @@ export default function ProjectsPage() {
         }}
       />
 
-      <Suspense>
-        <Header />
-      </Suspense>
+      <Header />
 
       <main>
         <section className="relative px-6 pt-40 pb-24">
@@ -41,37 +39,34 @@ export default function ProjectsPage() {
           <div className="mx-auto max-w-6xl relative z-10">
             {/* Back link */}
             <Link
-              href="/"
+              to="/"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300 mb-12 group"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
-              {t('page.backToHome')}
+              Back to home
             </Link>
 
             {/* Page header */}
             <div className="mb-16">
               <span className="text-sm font-medium text-primary uppercase tracking-widest mb-3 block animate-fade-in opacity-0 stagger-1">
-                {t('page.label')}
+                My work
               </span>
               <div className="flex items-end gap-4 mb-4 flex-wrap animate-fade-in-up opacity-0 stagger-2">
                 <h1 className="text-5xl md:text-6xl font-bold">
-                  {t('page.title')} <span className="gradient-text-pink">{t('page.titleHighlight')}</span>
+                  All <span className="gradient-text-pink">{projects.length} projects</span>
                 </h1>
-                <span className="glass border border-white/10 text-muted-foreground text-sm font-medium px-3 py-1.5 rounded-full mb-1">
-                  {t('page.badge', { count: projects.length })}
-                </span>
               </div>
               <p className="text-muted-foreground max-w-2xl text-lg animate-fade-in-up opacity-0 stagger-3">
-                {t('page.description')}
+                Everything I&apos;ve built — from tools and experiments to team projects and side ventures.
               </p>
             </div>
 
             {/* Stats strip */}
             <div className="flex flex-wrap gap-4 mb-12 animate-fade-in-up opacity-0 stagger-4">
               {[
-                { label: t('page.stats.totalProjects'), value: projects.length },
-                { label: t('page.stats.technologies'), value: totalTechs },
-                { label: t('page.stats.openSource'), value: projects.filter(p => !p.private).length },
+                { label: "Total projects", value: projects.length },
+                { label: "Technologies", value: totalTechs },
+                { label: "Open source", value: projects.filter(p => !p.private).length },
               ].map(stat => (
                 <div
                   key={stat.label}

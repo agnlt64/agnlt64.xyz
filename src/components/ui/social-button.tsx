@@ -1,8 +1,7 @@
-"use client"
-
-import Link from "next/link";
 import { Icon } from "@/components/ui/icon";
 import { SocialLink } from "@/data";
+
+import { Link } from "@tanstack/react-router";
 
 interface SocialButtonProps extends SocialLink {
   isHovering?: boolean;
@@ -10,7 +9,7 @@ interface SocialButtonProps extends SocialLink {
 
 export function SocialButton({ name, icon, href, isHovering = false }: SocialButtonProps) {
   return (
-    <Link href={href} target="_blank" className="block">
+    <Link to={href} target="_blank" className="block">
       <div
         className="
           social-button group relative overflow-hidden
@@ -19,7 +18,7 @@ export function SocialButton({ name, icon, href, isHovering = false }: SocialBut
           glass border border-white/10
           hover:border-pink-500/30 hover:shadow-[0_2px_8px_rgba(236,72,153,0.12)]
           transition-all duration-300 cursor-pointer
-          hover:translate-y-[-5px]
+          hover:-translate-y-1.25
         "
       >
         {/* Cursor spotlight */}

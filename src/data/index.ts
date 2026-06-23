@@ -2,16 +2,17 @@
 export type Config = {
   name: string;
   tagline: string;
+  email: string;
+  title: string;
+  description: string;
 }
 
 export const siteConfig: Config = {
   name: "agnlt64",
   tagline: "Student • Software Engineer • Tech Enthusiast",
-}
-
-export const iutSiteConfig: Config = {
-  name: "Antonin GENELOT",
-  tagline: "Future software engineer"
+  email: "genelot.antonin@gmail.com",
+  title: "agnlt64.xyz",
+  description: "Personal Home Page of Antonin GENELOT (@agnlt64). 🇫🇷 IT student. FOSS & Linux adept. C, Go, Tanstack Start, React enjoyer."
 }
 
 export type NavItem = {
@@ -22,12 +23,9 @@ export type NavItem = {
 
 export const navigation: NavItem[] = [
   { name: "Programming", href: "#programming", icon: "Code" },
-  { name: "Electronics", href: "#electronics", icon: "Zap" }
+  { name: "Electronics", href: "#electronics", icon: "Zap" },
+  { name: "Chess", href: "#chess", icon: "Heart" }
 ];
-
-export const iutNavigation: NavItem[] = [...navigation, {
-  name: 'Passions', href: '#passions', icon: "Heart"
-}];
 
 export type AboutCard = {
   id: string;
@@ -48,15 +46,14 @@ export const aboutCards: AboutCard[] = [
     title: "Electronics",
     content: "There's something magical about bringing ideas to life through circuits and code, creating tangible solutions to real-world problems.",
     icon: "Zap"
+  },
+  {
+    id: "chess",
+    title: "Chess",
+    content: "I'm a huge fan of the game of chess, I've played competitively for two years, and a lot online. I'm working on an UCI chess engine (estimated strength around 2000 Elo).",
+    icon: "Heart"
   }
 ];
-
-export const iutAboutCards: AboutCard[] = [...aboutCards, {
-  id: "passions",
-  title: "Passions",
-  content: "I'm a huge fan of the game of chess, I've played competitively for two years, and a lot online. I'm also very interested in maths.",
-  icon: "Heart"
-}];
 
 export type Education = {
   degree: string;
@@ -73,30 +70,6 @@ export const education: Education = {
   description: "Focusing on software engineering, algorithms, and system design. Also working on various personal projects and contributing to open source.",
   icon: "GraduationCap"
 }
-
-export type SAE = {
-  name: string;
-  description: string;
-  link: string;
-}
-
-export const sae: SAE[] = [
-  {
-    name: "SAE 1 - How far from me?",
-    description: "A CLI GPS application in pure C. I was the leader of the team (3 students).",
-    link: "https://github.com/agnlt64/c_gps"
-  },
-  {
-    name: "SAE 2 - Bus network",
-    description: "A graphical application to manage a bus network. Made using C# and Windows Forms. I was the leader of the team (5 students).",
-    link: "https://github.com/agnlt64/orizo"
-  },
-  {
-    name: "SAE 3 - GO UPJV",
-    description: "A carpooling application for students. See more in the projects page.",
-    link: "https://github.com/agnlt64/go-upjv"
-  },
-];
 
 export type Internship = {
   company: string;
@@ -236,7 +209,7 @@ export const projects: Project[] = [
     title: "Portfolio Website",
     description: "My personal portfolio website.",
     content: "A sleek, modern portfolio website built with Next.js and Tailwind CSS. Showcases my projects, skills, and background in a clean, responsive design.",
-    technologies: ["Next.js", "Tailwind CSS", "shadcn"],
+    technologies: ["Tanstack Start", "Vite", "Tailwind CSS", "shadcn"],
   },
   {
     title: "Python Search Engine",
@@ -279,11 +252,6 @@ export type SocialLink = {
 }
 
 export const socialLinks: SocialLink[] = [
-  // {
-  //   name: "YouTube",
-  //   icon: "Youtube",
-  //   href: "https://www.youtube.com/@agnlt"
-  // },
   {
     name: "Instagram",
     icon: "Instagram",
@@ -298,128 +266,5 @@ export const socialLinks: SocialLink[] = [
     name: "GitHub",
     icon: "Github",
     href: "https://github.com/agnlt64"
-  },
-  // {
-  //   name: "Music",
-  //   icon: "Music",
-  //   href: "https://dring.agnlt64.xyz"
-  // }
-];
-
-export const iutSocialLinks: SocialLink[] = [...socialLinks, {
-  name: "Linkedin",
-  icon: "Linkedin",
-  href: "https://www.linkedin.com/in/antonin-genelot-b735bb386/",
-}];
-
-export type SoftSkillsEntry = {
-  widget: "soft-skills";
-  title: string;
-  icon: string;
-  body: string;
-  skills: Array<{ label: string; icon: string }>;
-};
-
-export type FlipCardsEntry = {
-  widget: "flip-cards";
-  title: string;
-  icon: string;
-  body: string;
-  cards: Array<{ challenge: string; lesson: string }>;
-};
-
-export type AgileRolesEntry = {
-  widget: "agile-roles";
-  title: string;
-  icon: string;
-  body: string;
-  roles: Array<{ name: string; icon: string; description: string }>;
-};
-
-export type LanguageCloudEntry = {
-  widget: "language-cloud";
-  title: string;
-  icon: string;
-  body: string;
-  languages: Array<{ name: string; paradigm: string }>;
-};
-
-export type ReflectionEntry =
-  | SoftSkillsEntry
-  | FlipCardsEntry
-  | AgileRolesEntry
-  | LanguageCloudEntry;
-
-export const iutReflections: ReflectionEntry[] = [
-  {
-    widget: "soft-skills",
-    title: "Compétences acquises",
-    icon: "GraduationCap",
-    body: "Le BUT m'a permis de développer ma capacité à travailler en équipe, notamment grâce aux SAE. Ma position de leader au sein de mes différents groupes m'a appris à déléguer les tâches en fonction des capacités de chacun. Enfin, j'ai appris à mieux communiquer sur mon travail, notamment en vulgarisant les parties techniques grâces aux soutenances orales.",
-    skills: [
-      { label: "Leadership",        icon: "Crown"    },
-      { label: "Travail en équipe", icon: "Heart"    },
-      { label: "Communication",     icon: "BookOpen" },
-    ],
-  },
-  {
-    widget: "flip-cards",
-    title: "Difficultés rencontrées",
-    icon: "Zap",
-    body: "Au début, il était difficile pour moi de travailler en équipe, étant donné que je suis autodidact. J'ai toujours eu tendance à directement me lancer dans la résolution des problèmes, sans prendre le temps de réfléchir avant. Enfin, j'ai été confronté à des technologies très anciennes et pas du tout utilisées dans le monde professionnel (PHP vanilla, Winforms), ce qui m'a demandé un certain temps d'adaptation.",
-    cards: [
-      {
-        challenge: "Autodidacte → équipe",
-        lesson: "Apprendre à faire confiance aux autres et à déléguer plutôt que tout faire seul.",
-      },
-      {
-        challenge: "Impulsivité → méthode",
-        lesson: "Prendre le temps de concevoir avant de coder évite de repartir de zéro.",
-      },
-      {
-        challenge: "Techs obsolètes",
-        lesson: "S'adapter à des contraintes inattendues est une compétence en soi.",
-      },
-    ],
-  },
-  {
-    widget: "agile-roles",
-    title: "Adaptation & Autonomie",
-    icon: "Code",
-    body: "Le BUT m'a appris la méthode agile, qui permet d'organiser son travail de manière très efficace. Les sprints réguliers permettent d'assurer la qualité du projet, tout en laissant une certaine autonomie au sein de l'équipe. J'ai pu endosser les différents rôles de la méthode agile, ce qui m'a permis de comprendre en profondeur les responsabilités de chacun.",
-    roles: [
-      {
-        name: "Scrum Master",
-        icon: "Crown",
-        description: "Faciliter les sprints, lever les blocages et protéger l'équipe des perturbations externes.",
-      },
-      {
-        name: "Product Owner",
-        icon: "BookOpen",
-        description: "Prioriser le backlog, définir la valeur métier et être la voix du client au sein de l'équipe.",
-      },
-      {
-        name: "Développeur",
-        icon: "Code",
-        description: "Implémenter les user stories, maintenir la qualité du code et respecter la définition of done.",
-      },
-    ],
-  },
-  {
-    widget: "language-cloud",
-    title: "Analyse & Prise de recul",
-    icon: "BookOpen",
-    body: "Finalement, le BUT m'a permis de monter en compétences techniques, de gagner en rigueur et d'améliorer ma manière de communiquer. J'ai découvert des technologies que je n'avais jamais utilisées et pratiqué divers paradigmes de programmation.",
-    languages: [
-      { name: "C",    paradigm: "Procédural"     },
-      { name: "C++",  paradigm: "Objet"          },
-      { name: "HTML", paradigm: "Markup"          },
-      { name: "CSS",  paradigm: "Styles"          },
-      { name: "JS",   paradigm: "Événementiel"    },
-      { name: "PHP",  paradigm: "Procédural / Web"},
-      { name: "C#",   paradigm: "Objet / .NET"    },
-      { name: "Java", paradigm: "Objet / JVM"     },
-      { name: "Bash", paradigm: "Scripts shell"   },
-    ],
   },
 ];

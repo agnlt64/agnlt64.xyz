@@ -1,14 +1,11 @@
-"use client"
-
-import Link from "next/link";
 import { useRef, useState } from "react";
 import { projects } from "@/data";
 import { ProjectCard } from "@/components/ui/project-card";
 import { ArrowRight } from "lucide-react";
-import { useTranslations } from 'next-intl';
+
+import { Link } from "@tanstack/react-router";
 
 export function ProjectsSection() {
-  const t = useTranslations('projects');
   const featured = projects.filter(p => p.featured);
   const [isHovering, setIsHovering] = useState(false);
   const gridRef = useRef<HTMLDivElement>(null);
@@ -33,13 +30,13 @@ export function ProjectsSection() {
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="text-sm font-medium text-primary uppercase tracking-widest mb-3 block">
-            {t('label')}
+            My work
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            {t('featuredTitle')} <span className="gradient-text-pink">{t('featuredTitleHighlight')}</span>
+            Featured <span className="gradient-text-pink">projects</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            {t('featuredDescription')}
+            A selection of projects I&apos;ve worked on, from tools to creative experiments
           </p>
         </div>
 
@@ -66,10 +63,10 @@ export function ProjectsSection() {
         {/* View all CTA */}
         <div className="mt-12 text-center">
           <Link
-            href="/projects"
+            to="/projects"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full glass border border-pink-500/30 hover:border-pink-500/60 hover:glow-pink transition-all duration-300 group"
           >
-            {t('viewAll', { count: projects.length })}
+            View all {projects.length} projects
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>
