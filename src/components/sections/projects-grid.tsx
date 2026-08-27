@@ -1,7 +1,8 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { ProjectCard } from "@/components/ui/project-card";
 import { ProjectModal } from "@/components/ui/project-modal";
 import { Project } from "@/data";
+import { useCoolHover } from "@/hooks/use-cool-hover";
 
 interface ProjectsGridProps {
   projects: Project[]
@@ -9,23 +10,12 @@ interface ProjectsGridProps {
 
 export function ProjectsGrid({ projects }: ProjectsGridProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [isHovering, setIsHovering] = useState(false);
-  const gridRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const cards = gridRef.current?.querySelectorAll<HTMLElement>(".project-card");
-    if (!cards) return;
-    cards.forEach(card => {
-      const rect = card.getBoundingClientRect();
-      card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
-      card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
-    });
-  };
+  const { isHovering, setIsHovering, handleMouseMove, ref } = useCoolHover<HTMLDivElement>(".project-card");
 
   return (
     <>
       <div
-        ref={gridRef}
+        ref={ref}
         className="grid gap-6 md:grid-cols-2"
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovering(true)}

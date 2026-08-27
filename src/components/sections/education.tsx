@@ -1,26 +1,15 @@
-import { useRef, useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 import { internships, schools } from "@/data";
 import { Icon } from "@/components/ui/icon";
 import { Calendar, MapPin } from "lucide-react";
+import { useCoolHover } from "@/hooks/use-cool-hover";
 
 export function EducationSection() {
-  const [isHovering, setIsHovering] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    const cards = sectionRef.current?.querySelectorAll<HTMLElement>(".education-card");
-    if (!cards) return;
-    cards.forEach(card => {
-      const rect = card.getBoundingClientRect();
-      card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
-      card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
-    });
-  };
+  const { isHovering, setIsHovering, handleMouseMove, ref } = useCoolHover(".education-card");
 
   return (
     <section
-      ref={sectionRef}
+      ref={ref}
       className="relative px-6 py-8 md:py-18"
       id="education"
       onMouseMove={handleMouseMove}

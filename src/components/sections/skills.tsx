@@ -1,26 +1,14 @@
-import { useRef, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { skillCategories } from "@/data";
 import { Icon } from "@/components/ui/icon";
+import { useCoolHover } from "@/hooks/use-cool-hover";
 
 export function SkillsSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [isHovering, setIsHovering] = useState(false);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    const cards = sectionRef.current?.querySelectorAll<HTMLElement>(".skill-card");
-    if (!cards) return;
-
-    cards.forEach(card => {
-      const rect = card.getBoundingClientRect();
-      card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
-      card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
-    });
-  };
+  const { isHovering, setIsHovering, handleMouseMove, ref } = useCoolHover(".skill-card");
 
   return (
     <section
-      ref={sectionRef}
+      ref={ref}
       className="relative px-6 py-18"
       id="skills"
       onMouseMove={handleMouseMove}
@@ -69,7 +57,7 @@ export function SkillsSection() {
 
               <CardHeader className="relative z-10 pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-pink-500/20 to-pink-600/10 flex items-center justify-center border border-pink-500/20 group-hover:glow-pink transition-all duration-300">
+                  <div className="w-10 h-10 rounded-lg bg-linear-to-b from-pink-500/20 to-pink-600/10 flex items-center justify-center border border-pink-500/20 group-hover:glow-pink transition-all duration-300">
                     <Icon name={category.icon} className="w-5 h-5 text-primary" />
                   </div>
                   <CardTitle className="text-xl">

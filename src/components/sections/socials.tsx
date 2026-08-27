@@ -1,22 +1,11 @@
-import { useRef, useState } from "react";
 import { siteConfig, socialLinks } from "@/data";
 import { SocialButton } from "@/components/ui/social-button";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { useCoolHover } from "@/hooks/use-cool-hover";
 
 export function SocialsSection() {
-  const [isHovering, setIsHovering] = useState(false);
-  const gridRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const cards = gridRef.current?.querySelectorAll<HTMLElement>(".social-button");
-    if (!cards) return;
-    cards.forEach(card => {
-      const rect = card.getBoundingClientRect();
-      card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
-      card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
-    });
-  };
+  const { isHovering, setIsHovering, handleMouseMove, ref } = useCoolHover<HTMLDivElement>(".social-button");
 
   return (
     <section className="relative px-6 py-8 md:py-18" id="socials">
@@ -38,7 +27,7 @@ export function SocialsSection() {
         </div>
 
         <div
-          ref={gridRef}
+          ref={ref}
           className="grid gap-4 grid-cols-3"
           onMouseMove={handleMouseMove}
           onMouseEnter={() => setIsHovering(true)}
