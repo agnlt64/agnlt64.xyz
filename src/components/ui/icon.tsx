@@ -57,6 +57,22 @@ function QwerioIcon({ className }: { className?: string }) {
   );
 }
 
+function ThalesIcon({ className }: { className?: string }) {
+  return (
+    <svg 
+      viewBox="0 0 48 48"
+      className={className}
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g transform="translate(0.1,48.2) scale(0.1,-0.1)" stroke="none">
+        <path d="M150 459 c-56 -25 -96 -62 -121 -112 -22 -41 -37 -137 -23 -137 5 1 51 41 103 89 l94 89 81 -28 81 -27 17 -89 c10 -49 21 -107 26 -129 l8 -40 22 35 c81 129 33 285 -108 349 -57 26 -123 26 -180 0z"/>
+        <path d="M156 181 c-81 -82 -95 -100 -83 -110 12 -9 21 -6 46 20 27 26 37 30 64 25 40 -8 77 -48 77 -86 0 -23 3 -27 20 -23 14 4 18 11 15 27 -2 11 -11 70 -20 130 -8 61 -17 111 -18 113 -2 1 -47 -42 -101 -96z"/>
+      </g>
+    </svg>
+  );
+}
+
 type IconComponent = LucideIcon | ComponentType<{ className?: string }> | SimpleIcon;
 
 export const iconMap: Record<string, IconComponent> = {
@@ -74,7 +90,8 @@ export const iconMap: Record<string, IconComponent> = {
   Discord: siDiscord,
   Github: siGithub,
   Microsoft: MicrosoftIcon,
-  Qwerio: QwerioIcon
+  Qwerio: QwerioIcon,
+  Thales: ThalesIcon,
 }
 
 interface IconProps {

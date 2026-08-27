@@ -55,21 +55,66 @@ export const aboutCards: AboutCard[] = [
   }
 ];
 
-export type Education = {
-  degree: string;
-  institution: string;
-  graduation: string;
+export type Job = {
+  company: string;
+  during: string;
+  currentJob: boolean;
+  role: string;
   description: string;
   icon: string;
 }
 
-export const education: Education = {
-  degree: "Bachelor in Computer Science",
-  institution: "IUT informatique d'Amiens",
-  graduation: "Expected Graduation 2027",
-  description: "Focusing on software engineering, algorithms, and system design. Also working on various personal projects and contributing to open source.",
-  icon: "GraduationCap"
+export const jobs: Job[] = [{
+  company: "Thales (Cholet)",
+  during: "2026-2029",
+  currentJob: true,
+  role: "Junior Software Engineer in real-time communications",
+  description: "TODO",
+  icon: "Thales",
+}];
+
+export type Education = {
+  degree: string;
+  institution: string;
+  graduation: string;
+  inProgress: boolean;
+  description: string;
+  icon: string;
+  tags: string[];
 }
+
+export const schools: Education[] = [
+  {
+    degree: "Software Engineering Degree",
+    institution: "IMT Atlantique",
+    inProgress: true,
+    graduation: "Expected graduation 2029",
+    description: "TODO ",
+    icon: "GraduationCap",
+    tags: [
+      "Engineering degree",
+      "Open source",
+      "Team projects",
+      "Backend development"
+    ],
+  },
+  {
+    degree: "DUT Informatique",
+    institution: "IUT informatique d'Amiens",
+    inProgress: false,
+    graduation: "2024-2026",
+    description: "Focusing on data structures, algorithms, and basic computer science. Working with various maths topics. Also working on various personal projects and contributing to open source.",
+    icon: "GraduationCap",
+    tags: [
+      "Algorithms",
+      "Data structure",
+      "Operating systems",
+      "Open source",
+      "Graph theory",
+      "Discrete maths"
+    ],
+  }
+];
 
 export type Internship = {
   company: string;
@@ -106,32 +151,32 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Languages",
     icon: "Code",
-    skills: ["C", "C++", "Python", "Go", "HTML", "CSS", "TypeScript"]
+    skills: ["C", "C++", "Python", "Go", "TypeScript"]
   },
   {
     title: "Frontend",
     icon: "Monitor",
-    skills: ["React", "Next.js", "Tailwind", "shadcn", "Vite"]
+    skills: ["React", "Next.js", "Tailwind", "shadcn", "Vite", "Tanstack"]
   },
   {
     title: "Backend",
     icon: "Server",
-    skills: ["Flask", "Django", "OpenAI API"]
+    skills: ["Flask", "Django", "Fiber"]
   },
   {
     title: "Databases",
     icon: "BookOpen",
-    skills: ["SQLite", "MariaDB", "MySQL", "PostgreSQL", "Prisma"]
+    skills: ["SQLite", "PostgreSQL", "MySQL", "Prisma"]
   },
   {
     title: "Tools",
     icon: "Wrench",
-    skills: ["Git", "GitHub", "VS Code", "Visual Studio", "Figma", "Neovim", "tmux"]
+    skills: ["Git", "GitHub", "VS Code", "gcc", "gdb", "make"]
   },
   {
     title: "Operating Systems",
     icon: "Monitor",
-    skills: ["Windows", "macOS", "Mint", "Arch Linux", "Fedora", "Ubuntu"]
+    skills: ["Windows", "macOS", "Arch Linux", "Fedora"]
   },
   {
     title: "Hardware",
@@ -141,7 +186,7 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Hosting",
     icon: "Server",
-    skills: ["Vercel", "VPS Management", "Netlify", "Cloud Deployment", "Docker"]
+    skills: ["Vercel", "VPS Management", "Cloudflare", "Docker"]
   },
   {
     title: "Agentic Coding",
@@ -190,6 +235,14 @@ export const projects: Project[] = [
     image: "gogpt.png",
   },
   {
+    title: "Chess engine",
+    description: "An UCI chess engine in C",
+    content: "Mailbox engine written from scratch in C. Used for learning purposes, around 1900 Elo (tested vs Stockfish 18 NNUE).",
+    technologies: ["C"],
+    href: "https://github.com/agnlt64/cb",
+    featured: true,
+  },
+  {
     title: "C everyday",
     description: "Programming various algorithms in C everyday.",
     content: "I created this repository to practice C programming by implementing various algorithms and data structures. It's a great way to improve my coding skills and learn new techniques. I uploaded a new video every day on my YouTube channel. I chose to stop because I was going insane.",
@@ -203,7 +256,6 @@ export const projects: Project[] = [
     content: "Meta React is a new programming language designed to simplify the development of Next.js applications. It is focused on Static Site Generation (SSG) and offers a more intuitive syntax.",
     technologies: ["TypeScript", "Next.js", "Go"],
     href: "https://github.com/agnlt64/meta-react",
-    featured: true,
   },
   {
     title: "Portfolio Website",
@@ -226,13 +278,6 @@ export const projects: Project[] = [
     technologies: ["HTML", "CSS", "JavaScript"],
     href: "https://github.com/agnlt64/nextjs-clone",
     image: "nextjs-clone.png"
-  },
-  {
-    title: "Java Tool",
-    description: "A command-line tool in Go to manage Java projects.",
-    content: "A CLI tool to simplify the management of Java projects. Features include project scaffolding and simplifies building. No IDE required.",
-    technologies: ["Go"],
-    href: "https://github.com/agnlt64/java-tool"
   },
   {
     title: "Journal",

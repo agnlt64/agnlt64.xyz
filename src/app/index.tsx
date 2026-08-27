@@ -8,6 +8,7 @@ import { ProjectsSection } from "@/components/sections/projects";
 import { SocialsSection } from "@/components/sections/socials";
 
 import { createFileRoute } from "@tanstack/react-router";
+import { JobSection } from "@/components/sections/job";
 
 export const Route = createFileRoute('/')({
   component: HomePage,
@@ -36,6 +37,7 @@ function HomePage() {
         <HeroSection />
         <AboutSection />
         <SkillsSection />
+        <JobSection />
         <EducationSection />
         <ProjectsSection />
         <SocialsSection />
